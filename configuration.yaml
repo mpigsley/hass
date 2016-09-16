@@ -1,0 +1,69 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 362
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize:
+    media_player.kitchen:
+      emulated_hue_name: Kitchen Sonos
+    light.living_room_ceiling_fan_1:
+      emulated_hue: false
+    light.living_room_ceiling_fan_2:
+      emulated_hue: false
+    light.living_room_ceiling_fan_3:
+      emulated_hue: false
+
+frontend:
+
+http:
+  api_password: !secret http_password
+
+updater:
+
+discovery:
+
+conversation:
+
+history:
+
+logbook:
+
+sun:
+
+emulated_hue:
+  host_ip: 192.168.1.105
+
+sensor:
+  - platform: yr
+
+light:
+  - platform: hue
+    host: 192.168.0.100
+    allow_unreachable: true
+
+device_tracker:
+  - platform: tplink
+    host: 192.168.0.1
+    username: !secret router_username
+    password: !secret router_password
+    track_new_devices: no
+    consider_home: 30
+
+group:
+  living_room:
+    name: Living Room
+    view: yes
+    entities:
+      - light.living_room_ceiling_fan_1
+      - light.living_room_ceiling_fan_2
+      - light.living_room_ceiling_fan_3
+
+  kitchen:
+    name: Kitchen
+    view: yes
+    entities:
+      - media_player.kitchen
+
+automation: !include_dir_list automation

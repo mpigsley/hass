@@ -1,0 +1,8 @@
+secrets.yaml
+deps
+home-assistant.log
+home-assistant_v2.db
+known_devices.yaml
+phue.conf
+.HA_VERSION
+home-assistant_v2.db-journal
