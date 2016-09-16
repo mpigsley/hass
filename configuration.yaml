@@ -14,6 +14,32 @@ homeassistant:
       emulated_hue: false
     light.living_room_ceiling_fan_3:
       emulated_hue: false
+    sensor.forecastio_precip_type:
+      hidden: true
+    sensor.forecastio_precip_intensity:
+      hidden: true
+    sensor.forecastio_precip_probability:
+      hidden: true
+    sensor.forecastio_wind_speed:
+      hidden: true
+    sensor.forecastio_humidity:
+      hidden: true
+    sensor.forecastio_pressure:
+      hidden: true
+    sensor.forecastio_visibility:
+      hidden: true
+    sensor.forecastio_daily_high_temperature:
+      friendly_name: Max Temperature
+    sensor.forecastio_daily_low_temperature:
+      friendly_name: Min Temperature
+    sensor.forecastio_temperature:
+      friendly_name: Temperature
+    sensor.forecastio_summary:
+      friendly_name: Forecast Summary
+    sensor.forecastio_precip:
+      friendly_name: Precipitation
+    sensor.yr_symbol:
+      hidden: true
 
 frontend:
 
@@ -34,36 +60,52 @@ sun:
 
 emulated_hue:
   host_ip: 192.168.0.105
+  listen_port: 8300
 
 sensor:
-  - platform: yr
+- platform: yr
+- platform: forecast
+  api_key: !secret forecast_key
+  units: us
+  monitored_conditions:
+  - summary
+  - precip_type
+  - precip_intensity
+  - precip_probability
+  - temperature
+  - wind_speed
+  - humidity
+  - pressure
+  - visibility
+  - temperature_max
+  - temperature_min
 
 light:
-  - platform: hue
-    host: 192.168.0.100
-    allow_unreachable: true
+- platform: hue
+  host: 192.168.0.100
+  allow_unreachable: true
 
 device_tracker:
-  - platform: tplink
-    host: 192.168.0.1
-    username: !secret router_username
-    password: !secret router_password
-    track_new_devices: no
-    consider_home: 30
+- platform: tplink
+  host: 192.168.0.1
+  username: !secret router_username
+  password: !secret router_password
+  track_new_devices: no
+  consider_home: 30
 
 group:
   living_room:
     name: Living Room
     view: yes
     entities:
-      - light.living_room_ceiling_fan_1
-      - light.living_room_ceiling_fan_2
-      - light.living_room_ceiling_fan_3
+    - light.living_room_ceiling_fan_1
+    - light.living_room_ceiling_fan_2
+    - light.living_room_ceiling_fan_3
 
   kitchen:
     name: Kitchen
     view: yes
     entities:
-      - media_player.kitchen
+    - media_player.kitchen
 
 automation: !include_dir_list automation
