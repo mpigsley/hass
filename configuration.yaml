@@ -64,6 +64,17 @@ device_tracker:
   username: !secret automatic_username
   password: !secret automatic_password
 
+notify:
+- platform: smtp
+  name: Mitchel's Email
+  server: smtp.gmail.com
+  port: 587
+  sender: !secret mitchel_email
+  username: !secret mitchel_email
+  password: !secret mitchel_email_password
+  recipient: !secret mitchel_email
+  starttls: true
+
 group:
   living_room:
     name: Living Room
@@ -78,5 +89,23 @@ group:
     view: yes
     entities:
     - media_player.kitchen
+
+  location:
+    name: Location
+    view: no
+    entities:
+    - device_tracker.mitchel
+    - device_tracker.renee
+
+  forecast:
+    name: Forecast
+    view: no
+    entities:
+    - sun.sun
+    - sensor.forecastio_summary
+    - sensor.forecastio_temperature
+    - sensor.forecastio_daily_high_temperature
+    - sensor.forecastio_daily_low_temperature
+    - sensor.forecastio_precip
 
 automation: !include_dir_list automation

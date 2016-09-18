@@ -1,0 +1,8 @@
+alias: Home Assistant update notifications
+trigger:
+- platform: state
+  entity_id: updater.updater
+action:
+  service: notify.mitchels_email
+  data:
+    message: 'There is a new Home Assistant release available.'
