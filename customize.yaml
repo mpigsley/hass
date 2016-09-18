@@ -1,0 +1,36 @@
+media_player.kitchen:
+  emulated_hue_name: Kitchen Sonos
+
+light.living_room_ceiling_fan_1:
+  emulated_hue: false
+light.living_room_ceiling_fan_2:
+  emulated_hue: false
+light.living_room_ceiling_fan_3:
+  emulated_hue: false
+
+sensor.forecastio_precip_type:
+  hidden: true
+sensor.forecastio_precip_intensity:
+  hidden: true
+sensor.forecastio_precip_probability:
+  hidden: true
+sensor.forecastio_wind_speed:
+  hidden: true
+sensor.forecastio_humidity:
+  hidden: true
+sensor.forecastio_pressure:
+  hidden: true
+sensor.forecastio_visibility:
+  hidden: true
+sensor.forecastio_daily_high_temperature:
+  friendly_name: Max Temperature
+sensor.forecastio_daily_low_temperature:
+  friendly_name: Min Temperature
+sensor.forecastio_temperature:
+  friendly_name: Temperature
+sensor.forecastio_summary:
+  friendly_name: Forecast Summary
+sensor.forecastio_precip:
+  friendly_name: Precipitation
+sensor.yr_symbol:
+  hidden: true
