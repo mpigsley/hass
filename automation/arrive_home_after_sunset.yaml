@@ -1,7 +1,11 @@
 alias: Arriving Home After Sunset
 trigger:
 - platform: state
-  entity_id: group.family
+  entity_id: device_tracker.mitchel
+  from: 'not_home'
+  to: 'home'
+- platform: state
+  entity_id: device_tracker.renee
   from: 'not_home'
   to: 'home'
 condition:

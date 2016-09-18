@@ -1,0 +1,9 @@
+alias: Leaving Home
+trigger:
+- platform: state
+  entity_id: group.family
+  from: 'home'
+  to: 'not_home'
+action:
+- service: homeassistant.turn_off
+  entity_id: group.rooms
