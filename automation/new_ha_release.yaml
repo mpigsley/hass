@@ -1,4 +1,4 @@
-alias: Home Assistant update notifications
+alias: Home Assistant Update
 trigger:
 - platform: state
   entity_id: updater.updater

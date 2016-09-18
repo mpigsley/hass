@@ -1,12 +1,24 @@
+group.forecast:
+  emulated_hue: false
+group.family:
+  emulated_hue: false
+group.all_devices:
+  emulated_hue: false
+group.all_lights:
+  emulated_hue_name: All Lights
+  
 media_player.kitchen:
   emulated_hue_name: Kitchen Sonos
 
 light.living_room_ceiling_fan_1:
   emulated_hue: false
+  friendly_name: Ceiling Fan 1
 light.living_room_ceiling_fan_2:
   emulated_hue: false
+  friendly_name: Ceiling Fan 2
 light.living_room_ceiling_fan_3:
   emulated_hue: false
+  friendly_name: Ceiling Fan 3
 
 sensor.forecastio_precip_type:
   hidden: true

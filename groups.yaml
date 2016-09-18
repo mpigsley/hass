@@ -1,0 +1,52 @@
+# Tabs
+default_view:
+  name: Home
+  view: yes
+  entities:
+  - group.family
+  - group.forecast
+  - group.automation
+
+rooms:
+  name: Rooms
+  view: yes
+  entities:
+  - group.living_room
+  - group.kitchen
+
+# Rooms
+living_room:
+  name: Living Room
+  entities:
+  - light.living_room_ceiling_fan_1
+  - light.living_room_ceiling_fan_2
+  - light.living_room_ceiling_fan_3
+
+kitchen:
+  name: Kitchen
+  entities:
+  - media_player.kitchen
+
+# Other
+family:
+  name: Family
+  entities:
+  - device_tracker.mitchel
+  - device_tracker.renee
+
+forecast:
+  name: Forecast
+  entities:
+  - sun.sun
+  - sensor.forecastio_summary
+  - sensor.forecastio_temperature
+  - sensor.forecastio_daily_high_temperature
+  - sensor.forecastio_daily_low_temperature
+  - sensor.forecastio_precip
+
+automation:
+  name: Automation
+  entities:
+  - automation.arriving_home
+  - automation.home_assistant_update
+  - automation.sunset

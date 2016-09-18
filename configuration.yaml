@@ -75,37 +75,6 @@ notify:
   recipient: !secret mitchel_email
   starttls: true
 
-group:
-  living_room:
-    name: Living Room
-    view: yes
-    entities:
-    - light.living_room_ceiling_fan_1
-    - light.living_room_ceiling_fan_2
-    - light.living_room_ceiling_fan_3
-
-  kitchen:
-    name: Kitchen
-    view: yes
-    entities:
-    - media_player.kitchen
-
-  location:
-    name: Location
-    view: no
-    entities:
-    - device_tracker.mitchel
-    - device_tracker.renee
-
-  forecast:
-    name: Forecast
-    view: no
-    entities:
-    - sun.sun
-    - sensor.forecastio_summary
-    - sensor.forecastio_temperature
-    - sensor.forecastio_daily_high_temperature
-    - sensor.forecastio_daily_low_temperature
-    - sensor.forecastio_precip
+group: !include groups.yaml
 
 automation: !include_dir_list automation

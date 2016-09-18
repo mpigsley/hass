@@ -1,17 +1,9 @@
-alias: Turn on living room when sun sets
+alias: Arriving Home
 trigger:
-  platform: sun
-  event: sunset
-  offset: "-01:00:00"
-condition:
-  condition: or
-  conditions:
-  - condition: state
-    entity_id: device_tracker.mitchel
-    state: 'home'
-  - condition: state
-    entity_id: device_tracker.renee
-    state: 'home'
+- platform: state
+  entity_id: group.family
+  from: 'not_home'
+  to: 'home'
 action:
 - service: light.turn_on
   entity_id: light.living_room_ceiling_fan_1
@@ -28,5 +20,6 @@ action:
   data:
     brightness: 254
     rgb_color: [255, 199, 116]
+
 
 
