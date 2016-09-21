@@ -31,7 +31,7 @@ emulated_hue:
 sensor:
 - platform: yr
 - platform: forecast
-  api_key: !secret forecast_key
+  api_key: !secret forecast_api
   units: us
   monitored_conditions:
   - summary

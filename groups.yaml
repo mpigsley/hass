@@ -47,6 +47,7 @@ forecast:
 automation:
   name: Automation
   entities:
-  - automation.arriving_home
+  - automation.arriving_home_after_sunset
   - automation.home_assistant_update
+  - automation.leaving_home
   - automation.sunset
