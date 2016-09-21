@@ -6,3 +6,5 @@ known_devices.yaml
 phue.conf
 .HA_VERSION
 home-assistant_v2.db-journal
+OZW_Log.txt
+pyozw.sqlite
