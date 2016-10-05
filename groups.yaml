@@ -13,6 +13,7 @@ rooms:
   entities:
   - group.living_room
   - group.kitchen
+  - group.master_bedroom
 
 # Rooms
 living_room:
@@ -26,6 +27,11 @@ kitchen:
   name: Kitchen
   entities:
   - media_player.kitchen
+
+master_bedroom:
+  name: Master Bedroom
+  entities:
+  - switch.master_bedroom_light_switch_2
 
 # Other
 family:

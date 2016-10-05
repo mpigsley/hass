@@ -46,3 +46,6 @@ sensor.forecastio_precip:
   friendly_name: Precipitation
 sensor.yr_symbol:
   hidden: true
+
+switch.master_bedroom_light_switch_2:
+  icon: mdi:lightbulb
