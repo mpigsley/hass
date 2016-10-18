@@ -3,6 +3,7 @@ default_view:
   name: Home
   view: yes
   entities:
+  - configurator.philips_hue
   - group.family
   - group.forecast
   - group.automation
