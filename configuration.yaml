@@ -30,8 +30,8 @@ emulated_hue:
 
 sensor:
 - platform: yr
-- platform: forecast
-  api_key: !secret forecast_api
+- platform: darksky
+  api_key: !secret darksky_api
   units: us
   monitored_conditions:
   - summary

@@ -12,13 +12,16 @@ media_player.kitchen:
 
 light.living_room_ceiling_fan_1:
   emulated_hue: false
-  friendly_name: Ceiling Fan 1
+  friendly_name: Living Room Ceiling Fan 1
 light.living_room_ceiling_fan_2:
   emulated_hue: false
-  friendly_name: Ceiling Fan 2
+  friendly_name: Living Room Ceiling Fan 2
 light.living_room_ceiling_fan_3:
   emulated_hue: false
-  friendly_name: Ceiling Fan 3
+  friendly_name: Living Room Ceiling Fan 3
+light.master_bedroom_reading:
+  emulated_hue: false
+  friendly_name: Master Bedroom Reading
 
 sensor.forecastio_precip_type:
   hidden: true
@@ -47,5 +50,15 @@ sensor.forecastio_precip:
 sensor.yr_symbol:
   hidden: true
 
-switch.master_bedroom_light_switch_2:
+switch.master_bedroom_light_switch_switch_2_0:
+  friendly_name: Master Bedroom Light Switch
   icon: mdi:lightbulb
+switch.kitchen_light_switch_switch_3_0:
+  friendly_name: Kitchen Light Switch
+  icon: mdi:lightbulb
+switch.outside_light_switch_switch_5_0:
+  friendly_name: Outside Light Switch
+  icon: mdi:lightbulb
+switch.coffee_switch_4_0:
+  friendly_name: Coffee
+  icon: mdi:coffee

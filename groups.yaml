@@ -15,8 +15,16 @@ rooms:
   - group.living_room
   - group.kitchen
   - group.master_bedroom
+  - group.outside
 
 # Rooms
+home:
+  name: Home
+  entities:
+  - group.living_room
+  - group.kitchen
+  - group.master_bedroom
+
 living_room:
   name: Living Room
   entities:
@@ -28,11 +36,19 @@ kitchen:
   name: Kitchen
   entities:
   - media_player.kitchen
+  - switch.kitchen_light_switch_switch_3_0
+  - switch.coffee_switch_4_0
 
 master_bedroom:
   name: Master Bedroom
   entities:
-  - switch.master_bedroom_light_switch_2
+  - switch.master_bedroom_light_switch_switch_2_0
+  - light.master_bedroom_reading
+
+outside:
+  name: Outside
+  entities:
+  - switch.outside_light_switch_switch_5_0
 
 # Other
 family:
@@ -45,11 +61,11 @@ forecast:
   name: Forecast
   entities:
   - sun.sun
-  - sensor.forecastio_summary
-  - sensor.forecastio_temperature
-  - sensor.forecastio_daily_high_temperature
-  - sensor.forecastio_daily_low_temperature
-  - sensor.forecastio_precip
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_precip
 
 automation:
   name: Automation
@@ -57,4 +73,6 @@ automation:
   - automation.arriving_home_after_sunset
   - automation.home_assistant_update
   - automation.leaving_home
+  - automation.sunset_when_home
   - automation.sunset
+  - automation.sunrise
