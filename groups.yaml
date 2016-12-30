@@ -72,6 +72,7 @@ automation:
   entities:
   - automation.arriving_home_after_sunset
   - automation.home_assistant_update
+  - automation.turn_off_coffee_after_two_hours
   - automation.leaving_home
   - automation.sunset_when_home
   - automation.sunset

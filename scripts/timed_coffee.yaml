@@ -1,0 +1,22 @@
+timed_coffee:
+  alias: "Turn on coffee and set timer"
+  sequence:
+    # Cancel ev. old timers
+    - service: script.turn_off
+      data:
+        entity_id: script.timer_off
+    - service: switch.turn_on
+      data:
+        entity_id: switch.coffee_switch_4_0
+    # Set new timer
+    - service: script.turn_on
+      data:
+        entity_id: script.coffee_timer_off
+
+coffee_timer_off:
+  alias: "Turn off coffee after 2 hours"
+  sequence:
+    - delay: 02:00:00
+    - service: switch.turn_off
+      data:
+        entity_id: switch.coffee_switch_4_0
