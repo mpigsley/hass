@@ -4,6 +4,7 @@ default_view:
   view: yes
   entities:
   - configurator.philips_hue
+  - persistent_notification.update_available
   - group.family
   - group.forecast
   - group.automation
@@ -15,7 +16,7 @@ rooms:
   - group.living_room
   - group.kitchen
   - group.master_bedroom
-  - group.outside
+  - group.exterior
 
 # Rooms
 home:
@@ -24,6 +25,12 @@ home:
   - group.living_room
   - group.kitchen
   - group.master_bedroom
+
+main_room:
+  name: Main Room
+  entities:
+  - group.kitchen
+  - group.living_room
 
 living_room:
   name: Living Room
@@ -45,10 +52,53 @@ master_bedroom:
   - switch.master_bedroom_light_switch_switch_2_0
   - light.master_bedroom_reading
 
-outside:
-  name: Outside
+exterior:
+  name: Exterior
   entities:
   - switch.outside_light_switch_switch_5_0
+
+# Lights
+lights:
+  name: Lights
+  entities:
+  - group.interior_lights
+  - group.exterior_lights
+
+interior_lights:
+  name: Interior Lights
+  entities:
+  - group.living_room_lights
+  - group.kitchen_lights
+  - group.master_bedroom_lights
+
+exterior_lights:
+  name: Exterior Lights
+  entities:
+  - switch.outside_light_switch_switch_5_0
+
+main_room_lights:
+  name: Main Room Lights
+  entities:
+  - group.kitchen_lights
+  - group.living_room_lights
+
+master_bedroom_lights:
+  name: Master Bedroom Lights
+  entities:
+  - switch.master_bedroom_light_switch_switch_2_0
+  - light.master_bedroom_reading
+
+kitchen_lights:
+  name: Kitchen Lights
+  entities:
+  - switch.kitchen_light_switch_switch_3_0
+
+living_room_lights:
+  name: Living Room Lights
+  entities:
+  - light.living_room_ceiling_fan_1
+  - light.living_room_ceiling_fan_2
+  - light.living_room_ceiling_fan_3
 
 # Other
 family:
@@ -77,3 +127,5 @@ automation:
   - automation.sunset_when_home
   - automation.sunset
   - automation.sunrise
+  - automation.startup_notification
+  - automation.login_failure

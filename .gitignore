@@ -3,6 +3,7 @@ deps
 home-assistant.log
 home-assistant_v2.db
 known_devices.yaml
+html5_push_registrations.conf
 phue.conf
 .HA_VERSION
 home-assistant_v2.db-journal
@@ -10,3 +11,4 @@ OZW_Log.txt
 pyozw.sqlite
 zwscene.xml
 zwcfg_**.xml
+.uuid

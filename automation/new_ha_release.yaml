@@ -2,7 +2,18 @@ alias: Home Assistant Update
 trigger:
 - platform: state
   entity_id: updater.updater
+
+condition:
+- condition: template
+  value_template: "{{ states('updater.updater') != 'unknown' }}"
+
 action:
-  service: notify.mitchels_email
+- service: script.ifttt_notify
+  data_template:
+    value1: 'There is a new Version of Home-Assistant Available.'
+    value2: "{{ states('updater.updater') }}"
+    value3: ''
+- service: notify.notify_mitchel
   data:
-    message: 'There is a new Home Assistant release available.'
+    title: 'New Version of Home-Assistant Available.'
+    message: "Version: {{ states('updater.updater') }}"

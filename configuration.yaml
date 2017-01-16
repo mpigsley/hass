@@ -1,3 +1,9 @@
+############################################################
+#
+# Home Assistant Main Configuration File
+#
+############################################################
+
 homeassistant:
   name: Home
   latitude: !secret latitude
@@ -7,10 +13,16 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include customize.yaml
 
-frontend:
-
 http:
   api_password: !secret http_password
+  base_url: !secret base_url
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+
+sun:
+  elevation: 362
+
+frontend:
 
 updater:
 
@@ -22,11 +34,18 @@ history:
 
 logbook:
 
-sun:
+############################################################
+#
+# Components
+#
+############################################################
 
 emulated_hue:
   host_ip: 192.168.0.105
   listen_port: 8300
+
+ifttt:
+  key: secret! ifttt_key
 
 sensor:
 - platform: yr
@@ -59,20 +78,21 @@ device_tracker:
   track_new_devices: no
   consider_home: 180
 
-notify:
-- platform: smtp
-  name: Mitchel's Email
-  server: smtp.gmail.com
-  port: 587
-  sender: !secret mitchel_email
-  username: !secret mitchel_email
-  password: !secret mitchel_email_password
-  recipient: !secret mitchel_email
-  starttls: true
-
 zwave:
   usb_path: /dev/ttyACM0
 
-group: !include groups.yaml
+############################################################
+#
+# Includes
+#
+############################################################
+
+# Single Files
+group: !include includes/groups.yaml
+notify: !include includes/notify.yaml
+
+# Merge List
 automation: !include_dir_list automation
+
+# Merge Named
 script: !include_dir_merge_named scripts

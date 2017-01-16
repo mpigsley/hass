@@ -57,7 +57,7 @@ switch.kitchen_light_switch_switch_3_0:
   friendly_name: Kitchen Light Switch
   icon: mdi:lightbulb
 switch.outside_light_switch_switch_5_0:
-  friendly_name: Outside Light Switch
+  friendly_name: Exterior Front Light Switch
   icon: mdi:lightbulb
 switch.coffee_switch_4_0:
   friendly_name: Coffee

@@ -1,0 +1,42 @@
+- platform: smtp
+  name: mp_email
+  server: smtp.gmail.com
+  port: 587
+  sender: !secret mitchel_email
+  username: !secret mitchel_email
+  password: !secret mitchel_email_password
+  recipient: !secret mitchel_email
+  starttls: true
+
+- platform: smtp
+  name: rp_email       
+  server: smtp.gmail.com
+  port: 587
+  sender: !secret mitchel_email
+  username: !secret mitchel_email
+  password: !secret mitchel_email_password
+  recipient: !secret renee_email
+  starttls: true
+
+- platform: html5
+  name: HTML5
+  gcm_api_key: !secret gcm_api_key
+  gcm_sender_id: !secret gcm_sender_id
+
+- platform: group
+  name: notify_mitchel
+  services:
+    - service: mp_email
+    - service: html5
+
+- platform: group
+  name: notify_renee
+  services:
+    - service: rp_email
+
+- platform: group
+  name: notify_all
+  services:
+    - service: notify_mitchel
+    - service: notify_renee
+    - service: html5
