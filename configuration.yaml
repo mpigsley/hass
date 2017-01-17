@@ -11,7 +11,7 @@ homeassistant:
   elevation: 362
   unit_system: imperial
   time_zone: America/Chicago
-  customize: !include customize.yaml
+  customize: !include includes/customize.yaml
 
 http:
   api_password: !secret http_password
