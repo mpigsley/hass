@@ -55,6 +55,8 @@ emulated_hue:
 ifttt:
   key: secret! ifttt_key
 
+ecobee:
+
 sensor:
 - platform: yr
 - platform: darksky

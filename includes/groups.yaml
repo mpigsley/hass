@@ -4,7 +4,9 @@ default_view:
   view: yes
   entities:
   - configurator.philips_hue
+  - configurator.ecobee
   - persistent_notification.update_available
+  - group.climate
   - group.family
   - group.forecast
   - group.automation
@@ -17,6 +19,7 @@ rooms:
   - group.kitchen
   - group.master_bedroom
   - group.exterior
+  - group.basement
 
 # Rooms
 home:
@@ -25,12 +28,18 @@ home:
   - group.living_room
   - group.kitchen
   - group.master_bedroom
+  - group.basement
 
 main_room:
   name: Main Room
   entities:
   - group.kitchen
   - group.living_room
+
+basement:
+  name: Basement
+  entities:
+  - binary_sensor.downstairs_occupancy
 
 living_room:
   name: Living Room
@@ -106,6 +115,13 @@ family:
   entities:
   - device_tracker.mitchel
   - device_tracker.renee
+
+climate:
+  name: Climate
+  entities:
+  - climate.home
+  - sensor.downstairs_temperature
+  - sensor.home_temperature
 
 forecast:
   name: Forecast
