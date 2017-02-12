@@ -1,8 +1,9 @@
 group.forecast:
   emulated_hue: false
+group.climate:
+  emulated_hue: false
 group.family:
   emulated_hue: false
-
 group.all_automations:
   friendly_name: All Automations
   hidden: false
@@ -22,6 +23,15 @@ group.all_scripts:
 group.all_switches:
   friendly_name: All Switches
   hidden: false
+  emulated_hue: false
+
+script.coffee_timer_off:
+  emulated_hue: false
+script.ifttt_notify:
+  emulated_hue: false
+script.thermostat:
+  emulated_hue_name: Thermostat
+script.timed_coffee:
   emulated_hue: false
 
 media_player.kitchen:

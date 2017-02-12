@@ -6,3 +6,9 @@
 * MySQL Setup:
   * `sudo apt-get install libmysqlclient-dev mysql-server`
   * `pip3 install mysqlclient`
+
+# TODO
+
+* Add automation for Apple TV
+* Add/Remove Sensors from home mode based on occupation
+* Alexa, run/reset thermostat
