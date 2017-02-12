@@ -1,4 +1,5 @@
 thermostat:
+  alias: "Set Thermostat to Requested Level"
   sequence:
     - service: climate.set_temperature
       data_template:

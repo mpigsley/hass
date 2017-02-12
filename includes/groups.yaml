@@ -9,7 +9,6 @@ default_view:
   - group.climate
   - group.family
   - group.forecast
-  - group.automation
 
 rooms:
   name: Rooms
@@ -20,6 +19,13 @@ rooms:
   - group.master_bedroom
   - group.exterior
   - group.basement
+
+automation:
+  name: Automation
+  view: yes
+  entities:
+  - group.all_automations
+  - group.all_scripts
 
 # Rooms
 home:
@@ -60,6 +66,7 @@ master_bedroom:
   entities:
   - switch.master_bedroom_light_switch_switch_2_0
   - light.master_bedroom_reading
+  - media_player.bedroom_apple_tv
 
 exterior:
   name: Exterior
@@ -132,16 +139,3 @@ forecast:
   - sensor.dark_sky_daily_high_temperature
   - sensor.dark_sky_daily_low_temperature
   - sensor.dark_sky_precip
-
-automation:
-  name: Automation
-  entities:
-  - automation.arriving_home_after_sunset
-  - automation.home_assistant_update
-  - automation.turn_off_coffee_after_two_hours
-  - automation.leaving_home
-  - automation.sunset_when_home
-  - automation.sunset
-  - automation.sunrise
-  - automation.startup_notification
-  - automation.login_failure

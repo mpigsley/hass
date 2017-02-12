@@ -2,13 +2,34 @@ group.forecast:
   emulated_hue: false
 group.family:
   emulated_hue: false
+
+group.all_automations:
+  friendly_name: All Automations
+  hidden: false
+  emulated_hue: false
 group.all_devices:
+  friendly_name: All Devices
+  hidden: false
   emulated_hue: false
 group.all_lights:
-  emulated_hue_name: All Lights
-  
+  friendly_name: All Lights
+  hidden: false
+  emulated_hue: false
+group.all_scripts:
+  friendly_name: All Scripts
+  hidden: false
+  emulated_hue: false
+group.all_switches:
+  friendly_name: All Switches
+  hidden: false
+  emulated_hue: false
+
 media_player.kitchen:
+  friendly_name: Kitchen Sonos
   emulated_hue_name: Kitchen Sonos
+media_player.bedroom_apple_tv:
+  friendly_name: Master Bedroom Apple TV
+  emulated_hue_name: Master Bedroom Apple TV
 
 light.living_room_ceiling_fan_1:
   emulated_hue: false
@@ -23,6 +44,8 @@ light.master_bedroom_reading:
   emulated_hue: false
   friendly_name: Master Bedroom Reading
 
+sensor.home_temperature
+  friendly_name: Upstairs Temperature
 sensor.forecastio_precip_type:
   hidden: true
 sensor.forecastio_precip_intensity:
