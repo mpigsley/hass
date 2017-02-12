@@ -51,6 +51,14 @@ recorder:
 emulated_hue:
   host_ip: 192.168.0.105
   listen_port: 8300
+  off_maps_to_on_domains:
+  exposed_domains:
+    - script
+    - switch
+    - light
+    - group
+    - input_boolean
+    - media_player
 
 ifttt:
   key: secret! ifttt_key
