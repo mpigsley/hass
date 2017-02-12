@@ -44,7 +44,7 @@ light.master_bedroom_reading:
   emulated_hue: false
   friendly_name: Master Bedroom Reading
 
-sensor.home_temperature
+sensor.home_temperature:
   friendly_name: Upstairs Temperature
 sensor.forecastio_precip_type:
   hidden: true
