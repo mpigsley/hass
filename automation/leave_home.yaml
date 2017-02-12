@@ -11,3 +11,7 @@ action:
   entity_id: switch.coffee_switch_4_0
 - service: homeassistant.turn_off
   entity_id: script.coffee_timer_off
+- service: climate.set_away_mode
+  data:
+    entity_id: climate.home
+    away_mode: true
