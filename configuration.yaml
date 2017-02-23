@@ -65,6 +65,12 @@ ifttt:
 
 ecobee:
 
+media_player:
+  - platform: apple_tv
+    name: bedroom_apple_tv
+    host: !secret apple_tv_host
+    login_id: !secret apple_tv_login_id
+
 sensor:
 - platform: yr
 - platform: darksky
