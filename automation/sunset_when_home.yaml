@@ -2,7 +2,7 @@ alias: Sunset When Home
 trigger:
   platform: sun
   event: sunset
-  offset: "-01:00:00"
+  offset: "-00:10:00"
 condition:
   condition: or
   conditions:
