@@ -104,7 +104,7 @@ device_tracker:
   consider_home: 180
 
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/ttyACM1
 
 ############################################################
 #

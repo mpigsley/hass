@@ -53,6 +53,8 @@ living_room:
   - light.living_room_ceiling_fan_1
   - light.living_room_ceiling_fan_2
   - light.living_room_ceiling_fan_3
+  - light.living_room_side_table_left
+  - light.living_room_side_table_right
 
 kitchen:
   name: Kitchen
@@ -113,6 +115,7 @@ living_room_lights:
   name: Living Room Lights
   entities:
   - group.living_room_ceiling_fan
+  - group.living_room_side_tables
 
 living_room_ceiling_fan:
   name: Living Room Ceiling Fan
@@ -120,6 +123,12 @@ living_room_ceiling_fan:
   - light.living_room_ceiling_fan_1
   - light.living_room_ceiling_fan_2
   - light.living_room_ceiling_fan_3  
+
+living_room_side_tables:
+  name: Living Room Side Tables
+  entities:
+  - light.living_room_side_table_left
+  - light.living_room_side_table_right
 
 # Other
 family:
