@@ -12,21 +12,5 @@ condition:
   condition: sun
   after: sunset
 action:
-- service: light.turn_on
-  entity_id: light.living_room_ceiling_fan_1
-  data:
-    brightness: 254
-    rgb_color: [255, 199, 116]
-- service: light.turn_on
-  entity_id: light.living_room_ceiling_fan_2
-  data:
-    brightness: 254
-    rgb_color: [255, 199, 116]
-- service: light.turn_on
-  entity_id: light.living_room_ceiling_fan_3
-  data:
-    brightness: 254
-    rgb_color: [255, 199, 116]
-
-
-
+- service: switch.turn_on
+  entity_id: switch.living_room_light_switch_switch_6_0

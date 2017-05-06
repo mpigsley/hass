@@ -41,18 +41,24 @@ media_player.bedroom_apple_tv:
   friendly_name: Master Bedroom Apple TV
   emulated_hue_name: Master Bedroom Apple TV
 
-light.living_room_ceiling_fan_1:
+light.kitchen_sink_1:
   emulated_hue: false
-  friendly_name: Living Room Ceiling Fan 1
-light.living_room_ceiling_fan_2:
+  friendly_name: Kitchen Sink 1
+light.kitchen_sink__2:
   emulated_hue: false
-  friendly_name: Living Room Ceiling Fan 2
-light.living_room_ceiling_fan_3:
+  friendly_name: Kitchen Sink 2
+light.kitchen_sink_3:
   emulated_hue: false
-  friendly_name: Living Room Ceiling Fan 3
+  friendly_name: Kitchen Sink 3
 light.master_bedroom_reading:
   emulated_hue: false
   friendly_name: Master Bedroom Reading
+light.living_room_side_table_left:
+  emulated_hue: false
+  friendly_name: Living Room Side Table Left
+light.living_room_side_table_right:
+  emulated_hue: false 
+  friendly_name: Living Room Side Table Right
 
 sensor.home_temperature:
   friendly_name: Upstairs Temperature
@@ -95,3 +101,6 @@ switch.outside_light_switch_switch_5_0:
 switch.coffee_switch_4_0:
   friendly_name: Coffee
   icon: mdi:coffee
+switch.living_room_light_switch_switch_6_0:
+  friendly_name: Living Room Light Switch
+  icon: mdi:lightbulb

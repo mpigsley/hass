@@ -50,9 +50,7 @@ basement:
 living_room:
   name: Living Room
   entities:
-  - light.living_room_ceiling_fan_1
-  - light.living_room_ceiling_fan_2
-  - light.living_room_ceiling_fan_3
+  - switch.living_room_light_switch_switch_6_0
   - light.living_room_side_table_left
   - light.living_room_side_table_right
 
@@ -60,8 +58,11 @@ kitchen:
   name: Kitchen
   entities:
   - media_player.kitchen
-  - switch.kitchen_light_switch_switch_3_0
   - switch.coffee_switch_4_0
+  - switch.kitchen_light_switch_switch_3_0
+  - light.kitchen_sink_1
+  - light.kitchen_sink_2
+  - light.kitchen_sink_3
 
 master_bedroom:
   name: Master Bedroom
@@ -109,20 +110,21 @@ master_bedroom_lights:
 kitchen_lights:
   name: Kitchen Lights
   entities:
+  - group.kitchen_sink
   - switch.kitchen_light_switch_switch_3_0
+
+kitchen_sink:
+  name: Kitchen Sink
+  entities:
+  - light.kitchen_sink_1
+  - light.kitchen_sink_2
+  - light.kitchen_sink_3
 
 living_room_lights:
   name: Living Room Lights
   entities:
-  - group.living_room_ceiling_fan
   - group.living_room_side_tables
-
-living_room_ceiling_fan:
-  name: Living Room Ceiling Fan
-  entities:
-  - light.living_room_ceiling_fan_1
-  - light.living_room_ceiling_fan_2
-  - light.living_room_ceiling_fan_3  
+  - switch.living_room_light_switch_switch_6_0
 
 living_room_side_tables:
   name: Living Room Side Tables

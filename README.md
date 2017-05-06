@@ -6,6 +6,12 @@
 * MySQL Setup:
   * `sudo apt-get install libmysqlclient-dev mysql-server`
   * `pip3 install mysqlclient`
+* Add Z-Wave Node
+  1. `cd /srv/homeassistant/src/open-zwave-control-panel`
+  2. `sudo ./ozwcp -p 8888`
+  3. Edit Configuration -> Save Configuration
+  4. `sudo mv zwscene.xml /home/homeassistant/.homeassistant/`
+  5. `mv zwscene.xml /home/homeassistant/.homeassistant/`
 
 # TODO
 
