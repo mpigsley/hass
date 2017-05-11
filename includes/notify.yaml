@@ -28,6 +28,7 @@
   services:
     - service: mp_email
     - service: html5
+    - service: ios_mitchs_iphone
 
 - platform: group
   name: notify_renee

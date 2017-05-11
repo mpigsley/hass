@@ -3,11 +3,6 @@ trigger:
   platform: homeassistant
   event: start
 action:
-- service: script.ifttt_notify
-  data_template:
-    value1: 'Startup: Home Assistant is Up and Running!'
-    value2: ''
-    value3: ''
 - service: notify.html5
   data:
     title: 'Home Assistant'

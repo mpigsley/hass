@@ -60,9 +60,6 @@ emulated_hue:
     - input_boolean
     - media_player
 
-ifttt:
-  key: secret! ifttt_key
-
 ios:
 
 ecobee:
@@ -103,9 +100,6 @@ device_tracker:
   username: !secret router_username
   password: !secret router_password
   track_new_devices: no
-  consider_home: 180
-- platform: ios
-  
 
 zwave:
   usb_path: /dev/ttyACM0
