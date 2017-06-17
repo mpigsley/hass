@@ -25,6 +25,7 @@ sun:
 frontend:
 
 updater:
+  include_used_components: true
 
 discovery:
 
@@ -103,6 +104,7 @@ device_tracker:
 
 zwave:
   usb_path: /dev/ttyACM0
+  new_entity_ids: true
 
 ############################################################
 #
@@ -132,9 +134,10 @@ zone 2:
 # Single Files
 group: !include includes/groups.yaml
 notify: !include includes/notify.yaml
+automation: !include includes/automation.yaml
 
 # Merge List
-automation: !include_dir_list automation
+# automation old: !include_dir_list automation
 
 # Merge Named
 script: !include_dir_merge_named scripts

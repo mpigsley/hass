@@ -89,18 +89,18 @@ sensor.forecastio_precip:
 sensor.yr_symbol:
   hidden: true
 
-switch.master_bedroom_light_switch_switch_2_0:
+switch.master_bedroom_light_switch_switch:
   friendly_name: Master Bedroom Light Switch
   icon: mdi:lightbulb
-switch.kitchen_light_switch_switch_3_0:
+switch.kitchen_light_switch_switch:
   friendly_name: Kitchen Light Switch
   icon: mdi:lightbulb
-switch.outside_light_switch_switch_5_0:
+switch.outside_light_switch_switch:
   friendly_name: Exterior Front Light Switch
   icon: mdi:lightbulb
-switch.coffee_switch_4_0:
+switch.coffee_switch:
   friendly_name: Coffee
   icon: mdi:coffee
-switch.living_room_light_switch_switch_6_0:
+switch.living_room_light_switch_switch:
   friendly_name: Living Room Light Switch
   icon: mdi:lightbulb

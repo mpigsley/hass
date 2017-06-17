@@ -50,7 +50,7 @@ basement:
 living_room:
   name: Living Room
   entities:
-  - switch.living_room_light_switch_switch_6_0
+  - switch.living_room_light_switch_switch
   - light.living_room_side_table_left
   - light.living_room_side_table_right
 
@@ -58,8 +58,8 @@ kitchen:
   name: Kitchen
   entities:
   - media_player.kitchen
-  - switch.coffee_switch_4_0
-  - switch.kitchen_light_switch_switch_3_0
+  - switch.coffee_switch
+  - switch.kitchen_light_switch_switch
   - light.kitchen_sink_1
   - light.kitchen_sink_2
   - light.kitchen_sink_3
@@ -67,14 +67,14 @@ kitchen:
 master_bedroom:
   name: Master Bedroom
   entities:
-  - switch.master_bedroom_light_switch_switch_2_0
+  - switch.master_bedroom_light_switch_switch
   - light.master_bedroom_reading
   - media_player.bedroom_apple_tv
 
 exterior:
   name: Exterior
   entities:
-  - switch.outside_light_switch_switch_5_0
+  - switch.outside_light_switch_switch
 
 # Lights
 lights:
@@ -93,7 +93,7 @@ interior_lights:
 exterior_lights:
   name: Exterior Lights
   entities:
-  - switch.outside_light_switch_switch_5_0
+  - switch.outside_light_switch_switch
 
 main_room_lights:
   name: Main Room Lights
@@ -104,14 +104,14 @@ main_room_lights:
 master_bedroom_lights:
   name: Master Bedroom Lights
   entities:
-  - switch.master_bedroom_light_switch_switch_2_0
+  - switch.master_bedroom_light_switch_switch
   - light.master_bedroom_reading
 
 kitchen_lights:
   name: Kitchen Lights
   entities:
   - group.kitchen_sink
-  - switch.kitchen_light_switch_switch_3_0
+  - switch.kitchen_light_switch_switch
 
 kitchen_sink:
   name: Kitchen Sink
@@ -124,7 +124,7 @@ living_room_lights:
   name: Living Room Lights
   entities:
   - group.living_room_side_tables
-  - switch.living_room_light_switch_switch_6_0
+  - switch.living_room_light_switch_switch
 
 living_room_side_tables:
   name: Living Room Side Tables

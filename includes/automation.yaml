@@ -1,0 +1,139 @@
+- id: arrive_home_after_sunset
+  alias: Arriving Home After Sunset
+  trigger:
+  - platform: state
+    entity_id: device_tracker.mitchel
+    from: 'not_home'
+    to: 'home'
+  - platform: state
+    entity_id: device_tracker.renee
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: sun
+    after: sunset
+  action:
+  - service: switch.turn_on
+    entity_id: switch.living_room_light_switch_switch
+
+- id: arrive_home
+  alias: Arriving Home
+  trigger:
+  - platform: state
+    entity_id: device_tracker.mitchel
+    from: 'not_home'
+    to: 'home'
+  - platform: state
+    entity_id: device_tracker.renee
+    from: 'not_home'
+    to: 'home'
+  action:
+  - service: climate.ecobee_resume_program
+    data:
+      entity_id: climate.home
+      resume_all: true
+
+- id: login_failure
+  alias: Login Failure
+  trigger:
+    platform: template
+    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
+  action:
+    service: script.ifttt_notify
+    data_template:
+      value1: 'Bad Login: '
+      value2: 'There was a Hack attempt!'
+      value3: 'Go Check the GUI for details.'
+
+- id: leave_home
+  alias: Leaving Home
+  trigger:
+  - platform: state
+    entity_id: group.family
+    from: 'home'
+    to: 'not_home'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.home
+  - service: switch.turn_off
+    entity_id: switch.coffee_switch
+  - service: homeassistant.turn_off
+    entity_id: script.coffee_timer_off
+  - service: climate.set_away_mode
+    data:
+      entity_id: climate.home
+      away_mode: true
+
+- id: ha_update
+  alias: Home Assistant Update
+  trigger:
+  - platform: state
+    entity_id: updater.updater
+  condition:
+  - condition: template
+    value_template: "{{ states('updater.updater') != 'unknown' }}"
+  action:
+  - service: notify.ios_mitchs_iphone
+    data:
+      title: 'New Version of Home-Assistant Available.'
+      message: "Version: {{ states('updater.updater') }}"
+
+- id: startup
+  alias: Startup Notification
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: notify.html5
+    data:
+      title: 'Home Assistant'
+      message: 'Up and Running!'
+
+- id: sunrise
+  alias: Sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "+00:20:00"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.outside_light_switch_switch
+
+- id: sunset_when_home
+  alias: Sunset When Home
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:10:00"
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: device_tracker.mitchel
+      state: 'home'
+    - condition: state
+      entity_id: device_tracker.renee
+      state: 'home'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.living_room_light_switch_switch
+
+- id: sunset
+  alias: Sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.outside_light_switch_switch
+
+- id: turn_off_coffee
+  alias: Turn Off Coffee After Two Hours
+  trigger:
+    platform: state
+    entity_id: switch.coffee_switch
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.timed_coffee

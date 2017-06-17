@@ -1,9 +1,0 @@
-alias: Startup Notification
-trigger:
-  platform: homeassistant
-  event: start
-action:
-- service: notify.html5
-  data:
-    title: 'Home Assistant'
-    message: 'Up and Running!'

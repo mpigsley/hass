@@ -7,7 +7,7 @@ timed_coffee:
         entity_id: script.timer_off
     - service: switch.turn_on
       data:
-        entity_id: switch.coffee_switch_4_0
+        entity_id: switch.coffee_switch
     # Set new timer
     - service: script.turn_on
       data:
@@ -19,4 +19,4 @@ coffee_timer_off:
     - delay: 02:00:00
     - service: switch.turn_off
       data:
-        entity_id: switch.coffee_switch_4_0
+        entity_id: switch.coffee_switch
