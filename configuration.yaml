@@ -95,13 +95,6 @@ light:
   host: 192.168.0.110
   allow_unreachable: true
 
-device_tracker:
-- platform: tplink
-  host: 192.168.0.1
-  username: !secret router_username
-  password: !secret router_password
-  track_new_devices: no
-
 zwave:
   usb_path: /dev/ttyACM0
   new_entity_ids: true

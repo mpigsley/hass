@@ -2,11 +2,11 @@
   alias: Arriving Home After Sunset
   trigger:
   - platform: state
-    entity_id: device_tracker.mitchel
+    entity_id: device_tracker.mitchs_iphone
     from: 'not_home'
     to: 'home'
   - platform: state
-    entity_id: device_tracker.renee
+    entity_id: device_tracker.renees_iphone
     from: 'not_home'
     to: 'home'
   condition:
@@ -20,11 +20,11 @@
   alias: Arriving Home
   trigger:
   - platform: state
-    entity_id: device_tracker.mitchel
+    entity_id: device_tracker.mitchs_iphone
     from: 'not_home'
     to: 'home'
   - platform: state
-    entity_id: device_tracker.renee
+    entity_id: device_tracker.renees_iphone
     from: 'not_home'
     to: 'home'
   action:
@@ -88,6 +88,13 @@
     data:
       title: 'Home Assistant'
       message: 'Up and Running!'
+  - delay: 00:01:00
+  - service: notify.ios_mitchs_iphone
+    data:
+      message: 'request_location_update'
+  - service: notify.ios_renees_iphone
+    data:
+      message: 'request_location_update'
 
 - id: sunrise
   alias: Sunrise
@@ -109,10 +116,10 @@
     condition: or
     conditions:
     - condition: state
-      entity_id: device_tracker.mitchel
+      entity_id: device_tracker.mitchs_iphone
       state: 'home'
     - condition: state
-      entity_id: device_tracker.renee
+      entity_id: device_tracker.renees_iphone
       state: 'home'
   action:
   - service: switch.turn_on

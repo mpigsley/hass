@@ -136,8 +136,8 @@ living_room_side_tables:
 family:
   name: Family
   entities:
-  - device_tracker.mitchel
-  - device_tracker.renee
+  - device_tracker.mitchs_iphone
+  - device_tracker.renees_iphone
 
 climate:
   name: Climate
