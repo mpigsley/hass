@@ -60,34 +60,35 @@ light.living_room_side_table_right:
   emulated_hue: false 
   friendly_name: Living Room Side Table Right
 
-sensor.home_temperature:
-  friendly_name: Upstairs Temperature
-sensor.forecastio_precip_type:
-  hidden: true
-sensor.forecastio_precip_intensity:
-  hidden: true
-sensor.forecastio_precip_probability:
-  hidden: true
-sensor.forecastio_wind_speed:
-  hidden: true
-sensor.forecastio_humidity:
-  hidden: true
-sensor.forecastio_pressure:
-  hidden: true
-sensor.forecastio_visibility:
-  hidden: true
-sensor.forecastio_daily_high_temperature:
-  friendly_name: Max Temperature
-sensor.forecastio_daily_low_temperature:
-  friendly_name: Min Temperature
-sensor.forecastio_temperature:
-  friendly_name: Temperature
-sensor.forecastio_summary:
-  friendly_name: Forecast Summary
-sensor.forecastio_precip:
-  friendly_name: Precipitation
 sensor.yr_symbol:
   hidden: true
+sensor.dark_sky_precip:
+  hidden: true
+sensor.dark_sky_precip_intensity:
+  hidden: true
+sensor.dark_sky_precip_probability:
+  hidden: true
+sensor.dark_sky_pressure:
+  hidden: true
+sensor.dark_sky_visibility:
+  hidden: true
+sensor.dark_sky_wind_speed:
+  hidden: true
+
+sensor.home_temperature:
+  friendly_name: Upstairs Temperature
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: Max Temperature
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: Min Temperature
+sensor.dark_sky_humidity:
+  friendly_name: Humidity
+sensor.dark_sky_summary:
+  friendly_name: Forecast Summary
+  icon: mdi:weather-sunny
+  entity_picture:
+sensor.dark_sky_temperature:
+  friendly_name: Temperature
 
 switch.master_bedroom_light_switch_switch:
   friendly_name: Master Bedroom Light Switch

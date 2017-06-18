@@ -154,4 +154,4 @@ forecast:
   - sensor.dark_sky_temperature
   - sensor.dark_sky_daily_high_temperature
   - sensor.dark_sky_daily_low_temperature
-  - sensor.dark_sky_precip
+  - sensor.dark_sky_humidity

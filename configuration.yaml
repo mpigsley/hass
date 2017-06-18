@@ -118,6 +118,21 @@ zone 2:
   radius: 500
   icon: mdi:briefcase
 
+zone 3:
+  name: Renee's Clinic
+  latitude: !secret renee_clinic_latitude
+  longitude: !secret renee_clinic_longitude
+  radius: 500
+  icon: mdi:hospital-building
+
+zone 4:
+  name: Renee's Private Practice
+  latitude: !secret renee_private_practice_latitude
+  longitude: !secret renee_private_practice_longitude
+  radius: 500
+  icon: mdi:home-variant
+  
+
 ############################################################
 #
 # Includes
