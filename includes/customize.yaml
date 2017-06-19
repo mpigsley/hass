@@ -89,19 +89,35 @@ sensor.dark_sky_summary:
   entity_picture:
 sensor.dark_sky_temperature:
   friendly_name: Temperature
+sensor.hydroponics_state_luminance:
+  friendly_name: Luminance
+sensor.hydroponics_state_relative_humidity:
+  friendly_name: Relative Humidity
+sensor.hydroponics_state_temperature:
+  friendly_name: Temperature
+sensor.hydroponics_state_ultraviolet:
+  friendly_name: Ultraviolet
 
-switch.master_bedroom_light_switch_switch:
+switch.master_bedroom_light_switch:
   friendly_name: Master Bedroom Light Switch
   icon: mdi:lightbulb
-switch.kitchen_light_switch_switch:
+switch.kitchen_light_switch:
   friendly_name: Kitchen Light Switch
   icon: mdi:lightbulb
-switch.outside_light_switch_switch:
+switch.outside_light_switch:
   friendly_name: Exterior Front Light Switch
   icon: mdi:lightbulb
 switch.coffee_switch:
   friendly_name: Coffee
   icon: mdi:coffee
-switch.living_room_light_switch_switch:
+switch.living_room_light_switch:
   friendly_name: Living Room Light Switch
   icon: mdi:lightbulb
+switch.hydroponics_control_switch:
+  friendly_name: Control Switch
+switch.hydroponics_control_switch_2:
+  friendly_name: Grow Light
+  icon: mdi:lightbulb
+switch.hydroponics_control_switch_3:
+  friendly_name: Fan
+  icon: mdi:fan

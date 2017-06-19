@@ -9,6 +9,7 @@ default_view:
   - group.climate
   - group.family
   - group.forecast
+  - group.hydroponics
 
 rooms:
   name: Rooms
@@ -50,7 +51,7 @@ basement:
 living_room:
   name: Living Room
   entities:
-  - switch.living_room_light_switch_switch
+  - switch.living_room_light_switch
   - light.living_room_side_table_left
   - light.living_room_side_table_right
 
@@ -59,7 +60,7 @@ kitchen:
   entities:
   - media_player.kitchen
   - switch.coffee_switch
-  - switch.kitchen_light_switch_switch
+  - switch.kitchen_light_switch
   - light.kitchen_sink_1
   - light.kitchen_sink_2
   - light.kitchen_sink_3
@@ -67,14 +68,14 @@ kitchen:
 master_bedroom:
   name: Master Bedroom
   entities:
-  - switch.master_bedroom_light_switch_switch
+  - switch.master_bedroom_light_switch
   - light.master_bedroom_reading
   - media_player.bedroom_apple_tv
 
 exterior:
   name: Exterior
   entities:
-  - switch.outside_light_switch_switch
+  - switch.outside_light_switch
 
 # Lights
 lights:
@@ -93,7 +94,7 @@ interior_lights:
 exterior_lights:
   name: Exterior Lights
   entities:
-  - switch.outside_light_switch_switch
+  - switch.outside_light_switch
 
 main_room_lights:
   name: Main Room Lights
@@ -104,7 +105,7 @@ main_room_lights:
 master_bedroom_lights:
   name: Master Bedroom Lights
   entities:
-  - switch.master_bedroom_light_switch_switch
+  - switch.master_bedroom_light_switch
   - light.master_bedroom_reading
 
 kitchen_lights:
@@ -124,7 +125,7 @@ living_room_lights:
   name: Living Room Lights
   entities:
   - group.living_room_side_tables
-  - switch.living_room_light_switch_switch
+  - switch.living_room_light_switch
 
 living_room_side_tables:
   name: Living Room Side Tables
@@ -145,6 +146,17 @@ climate:
   - climate.home
   - sensor.downstairs_temperature
   - sensor.home_temperature
+
+hydroponics:
+  name: Hydroponics
+  entities:
+  - sensor.hydroponics_state_luminance
+  - sensor.hydroponics_state_relative_humidity
+  - sensor.hydroponics_state_temperature
+  - sensor.hydroponics_state_ultraviolet
+  - switch.hydroponics_control_switch
+  - switch.hydroponics_control_switch_2
+  - switch.hydroponics_control_switch_3
 
 forecast:
   name: Forecast

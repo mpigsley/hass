@@ -10,8 +10,8 @@
   1. `cd /srv/homeassistant/src/open-zwave-control-panel`
   2. `sudo ./ozwcp -p 8888`
   3. Edit Configuration -> Save Configuration
-  4. `sudo mv zwscene.xml /home/homeassistant/.homeassistant/`
-  5. `mv zwscene.xml /home/homeassistant/.homeassistant/`
+  4. `sudo cp zwscene.xml /home/homeassistant/.homeassistant/`
+  5. `sudo cp zwcfg_0xd4b7980d.xml /home/homeassistant/.homeassistant/`
 
 # TODO
 

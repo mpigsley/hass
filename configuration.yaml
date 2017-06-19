@@ -96,7 +96,7 @@ light:
   allow_unreachable: true
 
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/ttyACM1
   new_entity_ids: true
 
 ############################################################
@@ -143,9 +143,6 @@ zone 4:
 group: !include includes/groups.yaml
 notify: !include includes/notify.yaml
 automation: !include includes/automation.yaml
-
-# Merge List
-# automation old: !include_dir_list automation
 
 # Merge Named
 script: !include_dir_merge_named scripts

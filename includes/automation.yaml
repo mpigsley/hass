@@ -14,7 +14,7 @@
     after: sunset
   action:
   - service: switch.turn_on
-    entity_id: switch.living_room_light_switch_switch
+    entity_id: switch.living_room_light_switch
 
 - id: arrive_home
   alias: Arriving Home
@@ -104,7 +104,7 @@
     offset: "+00:20:00"
   action:
   - service: switch.turn_off
-    entity_id: switch.outside_light_switch_switch
+    entity_id: switch.outside_light_switch
 
 - id: sunset_when_home
   alias: Sunset When Home
@@ -123,7 +123,7 @@
       state: 'home'
   action:
   - service: switch.turn_on
-    entity_id: switch.living_room_light_switch_switch
+    entity_id: switch.living_room_light_switch
 
 - id: sunset
   alias: Sunset
@@ -133,7 +133,7 @@
     offset: "-01:00:00"
   action:
     service: switch.turn_on
-    entity_id: switch.outside_light_switch_switch
+    entity_id: switch.outside_light_switch
 
 - id: turn_off_coffee
   alias: Turn Off Coffee After Two Hours
