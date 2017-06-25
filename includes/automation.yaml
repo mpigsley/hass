@@ -33,6 +33,54 @@
       entity_id: climate.home
       resume_all: true
 
+- id: hydroponic_light_on
+  alias: Hydroponic Light On
+  trigger:
+  - platform: time
+    at: '2:00:00'
+  - platform: time
+    at: '8:00:00'
+  - platform: time
+    at: '14:00:00'
+  - platform: time
+    at: '20:00:00'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.hydroponics_control_switch_2
+
+- id: hydroponic_light_off
+  alias: Hydroponic Light Off
+  trigger:
+  - platform: time
+    at: '0:00:00'
+  - platform: time
+    at: '6:00:00'
+  - platform: time
+    at: '12:00:00'
+  - platform: time
+    at: '18:00:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.hydroponics_control_switch_2
+
+- id: hydroponic_fan_on
+  alias: Hydroponic Fan On
+  trigger:
+  - platform: template
+    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int >= 80 }}"
+  action:
+  - service: switch.turn_on
+    entity_id: switch.hydroponics_control_switch_3
+
+- id: hydroponic_fan_off
+  alias: Hydroponic Fan Off
+  trigger:
+  - platform: template
+    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int < 80 }}"
+  action:
+  - service: switch.turn_off
+    entity_id: switch.hydroponics_control_switch_3
+
 - id: login_failure
   alias: Login Failure
   trigger:

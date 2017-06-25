@@ -93,6 +93,7 @@ sensor.hydroponics_state_luminance:
   friendly_name: Luminance
 sensor.hydroponics_state_relative_humidity:
   friendly_name: Relative Humidity
+  icon: mdi:water-percent
 sensor.hydroponics_state_temperature:
   friendly_name: Temperature
 sensor.hydroponics_state_ultraviolet:
