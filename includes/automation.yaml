@@ -69,9 +69,9 @@
   alias: Hydroponic Light Off
   trigger:
   - platform: time
-    at: '1:00:00'
+    at: '1:30:00'
   - platform: time
-    at: '7:00:00'
+    at: '7:30:00'
   action:
   - service: switch.turn_off
     entity_id: switch.hydroponics_control_switch_2

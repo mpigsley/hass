@@ -97,7 +97,6 @@ light:
 
 zwave:
   usb_path: /dev/ttyACM1
-  new_entity_ids: true
 
 ############################################################
 #
