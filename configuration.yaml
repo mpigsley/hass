@@ -23,6 +23,9 @@ sun:
   elevation: 362
 
 frontend:
+  themes:
+    dark:
+      primary-color: "#233142"
 
 updater:
   include_used_components: true
@@ -141,7 +144,7 @@ zone 4:
 # Single Files
 group: !include includes/groups.yaml
 notify: !include includes/notify.yaml
-automation: !include includes/automation.yaml
+automation: !include automations.yaml
 
 # Merge Named
-script: !include_dir_merge_named scripts
+script: !include scripts.yaml

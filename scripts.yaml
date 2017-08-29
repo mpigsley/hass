@@ -1,3 +1,11 @@
+thermostat:
+  alias: "Set Thermostat to Requested Level"
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.home
+        temperature: "{{ requested_level }}"
+
 timed_coffee:
   alias: "Turn On Coffee and Set Timer"
   sequence:
