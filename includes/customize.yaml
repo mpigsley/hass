@@ -37,6 +37,9 @@ script.timed_coffee:
 media_player.kitchen:
   friendly_name: Kitchen Sonos
   emulated_hue_name: Kitchen Sonos
+media_player.basement:
+  friendly_name: Basement Sonos
+  emulated_hue_name: Basement Sonos
 media_player.bedroom_apple_tv:
   friendly_name: Master Bedroom Apple TV
   emulated_hue_name: Master Bedroom Apple TV
@@ -59,6 +62,8 @@ light.living_room_side_table_left:
 light.living_room_side_table_right:
   emulated_hue: false 
   friendly_name: Living Room Side Table Right
+light.basement_light_level:
+  friendly_name: Basement Light
 
 sensor.yr_symbol:
   hidden: true

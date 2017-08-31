@@ -47,6 +47,8 @@ basement:
   name: Basement
   entities:
   - binary_sensor.downstairs_occupancy
+  - media_player.basement
+  - light.basement_light_level
 
 living_room:
   name: Living Room

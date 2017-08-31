@@ -37,7 +37,7 @@
   alias: Hydroponic Fan On
   trigger:
   - platform: template
-    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int >= 80 }}"
+    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int > 84 }}"
   action:
   - service: switch.turn_on
     entity_id: switch.hydroponics_control_switch_3
@@ -46,10 +46,7 @@
   alias: Hydroponic Fan Off
   trigger:
   - platform: template
-    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int < 80 }}"
-  condition:
-  - condition: template
-    value_template: "{{ (as_timestamp(utcnow()) - as_timestamp(states.switch.hydroponics_control_switch_3.last_updated)) > 600 }}"
+    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int < 78 }}"
   action:
   - service: switch.turn_off
     entity_id: switch.hydroponics_control_switch_3
