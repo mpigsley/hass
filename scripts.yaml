@@ -1,30 +1,77 @@
 thermostat:
-  alias: "Set Thermostat to Requested Level"
+  alias: Set thermostat to requested level
   sequence:
-    - service: climate.set_temperature
-      data_template:
-        entity_id: climate.home
-        temperature: "{{ requested_level }}"
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.home
+      temperature: "{{ requested_level }}"
 
 timed_coffee:
-  alias: "Turn On Coffee and Set Timer"
+  alias: Set 2 hour coffee timer
   sequence:
-    # Cancel ev. old timers
-    - service: script.turn_off
-      data:
-        entity_id: script.timer_off
-    - service: switch.turn_on
-      data:
-        entity_id: switch.coffee_switch
-    # Set new timer
-    - service: script.turn_on
-      data:
-        entity_id: script.coffee_timer_off
+  # Cancel old timer
+  - service: script.turn_off
+    data:
+      entity_id: script.coffee_timer_off
+  # Set new timer
+  - service: script.turn_on
+    data:
+      entity_id: script.coffee_timer_off
 
 coffee_timer_off:
-  alias: "Turn Off Coffee After 2 Hours"
+  alias: Turn off coffee after 2 hours
   sequence:
-    - delay: 02:00:00
-    - service: switch.turn_off
-      data:
-        entity_id: switch.coffee_switch
+  - delay: 02:00:00
+  - service: switch.turn_off
+    data:
+      entity_id: switch.coffee_switch
+
+timed_garage_door_after_sunset:
+  alias: Trigger 10 minute nighttime garage timer
+  sequence:
+  # Cancel old timer
+  - service: script.turn_off
+    data:
+      entity_id: script.night_garage_timer_close
+  # Set new timer
+  - service: script.turn_on
+    data:
+      entity_id: script.night_garage_timer_close
+
+night_garage_timer_close:
+  alias: Close garage door after 10 minutes
+  sequence:
+  - delay: 00:10:00
+  - service: cover.close_cover
+    entity_id: cover.garage_door
+  - service: notify.ios_mitchs_iphone
+    data:
+      message: 'Garage open after sunset... closing now.'
+  - service: notify.ios_renees_iphone
+    data:
+      message: 'Garage open after sunset... closing now.'
+
+timed_garage_door_after_sunrise:
+  alias: Trigger 30 minute daytime garage timer
+  sequence:
+  # Cancel old timer
+  - service: script.turn_off
+    data:
+      entity_id: script.day_garage_timer_close
+  # Set new timer
+  - service: script.turn_on
+    data:
+      entity_id: script.day_garage_timer_close
+
+quick_garage_door:
+  alias: Close garage door after 30 minutes
+  sequence:
+  - delay: 00:00:20
+  - service: cover.close_cover
+    entity_id: cover.garage_door
+  - service: notify.ios_mitchs_iphone
+    data:
+      message: 'Garage open... closing now.'
+  - service: notify.ios_renees_iphone
+    data:
+      message: 'Garage open... closing now.'

@@ -20,6 +20,7 @@ rooms:
   - group.master_bedroom
   - group.exterior
   - group.basement
+  - group.garage
 
 automation:
   name: Automation
@@ -73,6 +74,11 @@ master_bedroom:
   - switch.master_bedroom_light_switch
   - light.master_bedroom_reading
   - media_player.bedroom_apple_tv
+
+garage:
+  name: Garage
+  entities:
+  - cover.garage_door
 
 exterior:
   name: Exterior

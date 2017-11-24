@@ -23,6 +23,7 @@ sun:
   elevation: 362
 
 frontend:
+  javascript_version: latest
   themes:
     dark:
       primary-color: "#233142"
@@ -45,7 +46,8 @@ history:
       - persistent_notification
 
 recorder:
-  purge_days: 7
+  purge_interval: 2
+  purge_keep_days: 7
   db_url: !secret recorder_db_url
 
 ############################################################
@@ -70,11 +72,17 @@ ios:
 
 ecobee:
 
+cover:
+- platform: myq
+  username: !secret myq_username
+  password: !secret myq_password
+  type: chamberlain
+
 media_player:
-  - platform: apple_tv
-    name: bedroom_apple_tv
-    host: !secret apple_tv_host
-    login_id: !secret apple_tv_login_id
+#  - platform: apple_tv
+#    name: bedroom_apple_tv
+#    host: !secret apple_tv_host
+#    login_id: !secret apple_tv_login_id
   - platform: sonos
 
 sensor:
@@ -101,7 +109,7 @@ light:
   allow_unreachable: true
 
 zwave:
-  usb_path: /dev/ttyACM1
+  usb_path: /dev/ttyACM0
 
 ############################################################
 #

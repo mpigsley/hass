@@ -170,13 +170,13 @@
   trigger:
     platform: sun
     event: sunset
-    offset: "-01:00:00"
+    offset: "-00:00:00"
   action:
     service: switch.turn_on
     entity_id: switch.outside_light_switch
 
 - id: turn_off_coffee
-  alias: Turn Off Coffee After Two Hours
+  alias: Trigger 2 hour coffee timer
   trigger:
     platform: state
     entity_id: switch.coffee_switch
@@ -184,3 +184,56 @@
   action:
     service: homeassistant.turn_on
     entity_id: script.timed_coffee
+
+- id: trigger_garage_timer_after_sunset
+  alias: Trigger open garage door after sunset
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    to: 'open'
+  condition:
+  - condition: sun
+    after: sunset
+    before: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.timed_garage_door_after_sunset
+
+- id: trigger_garage_timer_after_sunrise
+  alias: Trigger open garage door after sunset
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    to: 'open'
+  condition:
+  - condition: sun
+    after: sunrise
+    before: sunset
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.timed_garage_door_after_sunrise
+
+- id: notify_garage_open
+  alias: Notify if garage open and empty house
+  trigger:
+    platform: state
+    entity_id: cover.garage_door
+    to: 'open'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: device_tracker.mitchs_iphone
+      state: 'not_home'
+    - condition: state
+      entity_id: device_tracker.renees_iphone
+      state: 'not_home'
+  action:
+  - service: notify.ios_mitchs_iphone
+    data:
+      message: 'Garage open after sunset... closing now.'
+  - service: notify.ios_renees_iphone
+    data:
+      message: 'Garage open after sunset... closing now.'
+
+

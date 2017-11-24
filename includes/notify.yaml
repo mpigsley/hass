@@ -23,10 +23,6 @@
   gcm_api_key: !secret gcm_api_key
   gcm_sender_id: !secret gcm_sender_id
 
-- platform: discord
-  name: discord
-  token: !secret discord_token
-
 - platform: group
   name: notify_mitchel
   services:
