@@ -185,7 +185,7 @@
     service: homeassistant.turn_on
     entity_id: script.timed_coffee
 
-- id: trigger_garage_timer_after_sunset
+- id: garage_timer_after_sunset
   alias: Trigger open garage door after sunset
   trigger:
     platform: state
@@ -199,7 +199,7 @@
     service: homeassistant.turn_on
     entity_id: script.timed_garage_door_after_sunset
 
-- id: trigger_garage_timer_after_sunrise
+- id: garage_timer_after_sunrise
   alias: Trigger open garage door after sunset
   trigger:
     platform: state

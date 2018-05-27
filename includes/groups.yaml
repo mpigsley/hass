@@ -119,27 +119,14 @@ master_bedroom_lights:
 kitchen_lights:
   name: Kitchen Lights
   entities:
-  - group.kitchen_sink
+  - light.kitchen_sink
   - switch.kitchen_light_switch_switch
-
-kitchen_sink:
-  name: Kitchen Sink
-  entities:
-  - light.kitchen_sink_1
-  - light.kitchen_sink_2
-  - light.kitchen_sink_3
 
 living_room_lights:
   name: Living Room Lights
   entities:
-  - group.living_room_side_tables
+  - light.living_room_side_tables
   - switch.living_room_light_switch
-
-living_room_side_tables:
-  name: Living Room Side Tables
-  entities:
-  - light.living_room_side_table_left
-  - light.living_room_side_table_right
 
 # Other
 family:

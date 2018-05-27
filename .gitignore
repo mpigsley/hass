@@ -4,7 +4,7 @@ home-assistant.log
 home-assistant_v2.db
 known_devices.yaml
 html5_push_registrations.conf
-phue.conf
+phue*.conf
 .HA_VERSION
 home-assistant_v2.db-journal
 OZW_Log.txt
@@ -16,3 +16,5 @@ ecobee.conf
 emulated_hue_ids.json
 .ios.conf
 options.xml
+.config_entries.json
+entity_registry.yaml
