@@ -73,18 +73,6 @@
   - service: switch.turn_off
     entity_id: switch.hydroponics_control_switch_2
 
-- id: login_failure
-  alias: Login Failure
-  trigger:
-    platform: template
-    value_template: "{{ states('persistent_notification.httplogin') != 'unknown' }}"
-  action:
-    service: script.ifttt_notify
-    data_template:
-      value1: 'Bad Login: '
-      value2: 'There was a Hack attempt!'
-      value3: 'Go Check the GUI for details.'
-
 - id: leave_home
   alias: Leaving Home
   trigger:
@@ -145,25 +133,6 @@
   action:
   - service: switch.turn_off
     entity_id: switch.outside_light_switch
-
-- id: sunset_when_home
-  alias: Sunset When Home
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "-00:10:00"
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: device_tracker.mitchs_iphone
-      state: 'home'
-    - condition: state
-      entity_id: device_tracker.renees_iphone
-      state: 'home'
-  action:
-  - service: switch.turn_on
-    entity_id: switch.living_room_light_switch
 
 - id: sunset
   alias: Sunset
@@ -235,5 +204,3 @@
   - service: notify.ios_renees_iphone
     data:
       message: 'Garage open after sunset... closing now.'
-
-

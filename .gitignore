@@ -18,3 +18,4 @@ emulated_hue_ids.json
 options.xml
 .config_entries.json
 entity_registry.yaml
+.storage

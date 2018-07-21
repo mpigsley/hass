@@ -1,38 +1,50 @@
 group.forecast:
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.climate:
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.family:
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.all_automations:
   friendly_name: All Automations
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.all_devices:
   friendly_name: All Devices
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.all_lights:
   friendly_name: All Lights
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.all_scripts:
   friendly_name: All Scripts
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
 group.all_switches:
   friendly_name: All Switches
   hidden: false
-  emulated_hue: false
+  emulated_hue_hidden: true
+group.all_remotes:
+  friendly_name: All Remotes
+  emulated_hue_hidden: true
+group.all_covers:
+  friendly_name: All Covers
+  emulated_hue_hidden: true
 
 script.coffee_timer_off:
-  emulated_hue: false
-script.ifttt_notify:
-  emulated_hue: false
+  emulated_hue_hidden: true
+script.night_garage_timer_close:
+  emulated_hue_hidden: true
+script.quick_garage_door:
+  emulated_hue_hidden: true
 script.thermostat:
   emulated_hue_name: Thermostat
 script.timed_coffee:
-  emulated_hue: false
+  emulated_hue_hidden: true
+script.timed_garage_door_after_sunrise:
+  emulated_hue_hidden: true
+script.timed_garage_door_after_sunset:
+  emulated_hue_hidden: true
 
 media_player.kitchen:
   friendly_name: Kitchen Sonos
@@ -45,22 +57,22 @@ media_player.bedroom_apple_tv:
   emulated_hue_name: Master Bedroom Apple TV
 
 light.kitchen_sink_1:
-  emulated_hue: false
+  emulated_hue_hidden: true
   friendly_name: Kitchen Sink 1
-light.kitchen_sink__2:
-  emulated_hue: false
+light.kitchen_sink_2:
+  emulated_hue_hidden: true
   friendly_name: Kitchen Sink 2
 light.kitchen_sink_3:
-  emulated_hue: false
+  emulated_hue_hidden: true
   friendly_name: Kitchen Sink 3
 light.master_bedroom_reading:
-  emulated_hue: false
+  emulated_hue_hidden: true
   friendly_name: Master Bedroom Reading
 light.living_room_side_table_left:
-  emulated_hue: false
+  emulated_hue_hidden: true
   friendly_name: Living Room Side Table Left
 light.living_room_side_table_right:
-  emulated_hue: false 
+  emulated_hue_hidden: true
   friendly_name: Living Room Side Table Right
 light.basement_light_level:
   friendly_name: Basement Light
@@ -120,10 +132,14 @@ switch.living_room_light_switch:
   friendly_name: Living Room Light Switch
   icon: mdi:lightbulb
 switch.hydroponics_control_switch:
-  friendly_name: Control Switch
+  friendly_name: Hydroponics Control Switch
 switch.hydroponics_control_switch_2:
-  friendly_name: Grow Light
+  friendly_name: Hydroponics Grow Light
   icon: mdi:lightbulb
 switch.hydroponics_control_switch_3:
-  friendly_name: Fan
+  friendly_name: Hydroponics Fan
   icon: mdi:fan
+switch.hydroponics_control_switch_4:
+  emulated_hue_hidden: true
+switch.hydroponics_control_switch_5:
+  emulated_hue_hidden: true

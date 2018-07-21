@@ -55,8 +55,7 @@ living_room:
   name: Living Room
   entities:
   - switch.living_room_light_switch
-  - light.living_room_side_table_left
-  - light.living_room_side_table_right
+  - light.living_room_side_tables
 
 kitchen:
   name: Kitchen
@@ -64,9 +63,7 @@ kitchen:
   - media_player.kitchen
   - switch.coffee_switch
   - switch.kitchen_light_switch
-  - light.kitchen_sink_1
-  - light.kitchen_sink_2
-  - light.kitchen_sink_3
+  - light.kitchen_sink
 
 master_bedroom:
   name: Master Bedroom
@@ -139,7 +136,7 @@ climate:
   name: Climate
   entities:
   - climate.home
-  - sensor.downstairs_temperature
+  - sensor.master_bedroom_temperature
   - sensor.home_temperature
 
 hydroponics:
