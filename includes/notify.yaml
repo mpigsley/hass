@@ -26,18 +26,16 @@
 - platform: group
   name: notify_mitchel
   services:
-    - service: mp_email
     - service: html5
     - service: ios_mitchs_iphone
 
 - platform: group
   name: notify_renee
   services:
-    - service: rp_email
+    - service: ios_renees_iphone
 
 - platform: group
   name: notify_all
   services:
     - service: notify_mitchel
     - service: notify_renee
-    - service: html5

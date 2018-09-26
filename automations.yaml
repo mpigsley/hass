@@ -168,6 +168,6 @@
   action:
   - service: notify.notify_all
     data_template:
-      title: "Garage door open... closing now"
+      message: "Garage door open... closing now"
   - service: cover.close_cover
     entity_id: cover.garage_door
