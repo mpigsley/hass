@@ -1,0 +1,104 @@
+
+title: Pigsley Home
+views:
+  - title: Home
+    cards:
+      - type: entities
+        title: Family
+        show_header_toggle: true
+        entities:
+          - device_tracker.mitchs_iphone
+          - device_tracker.renees_iphone
+      - type: entities
+        title: Climate
+        show_header_toggle: true
+        entities:
+          - sensor.master_bedroom_temperature
+          - climate.home
+          - sensor.home_temperature
+      - type: entities
+        title: Forecast
+        show_header_toggle: true
+        entities:
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_daily_high_temperature
+          - sensor.dark_sky_daily_low_temperature
+          - sensor.dark_sky_temperature
+          - sun.sun
+          - sensor.dark_sky_summary
+      - type: entities
+        title: Hydroponics
+        show_header_toggle: true
+        entities:
+          - sensor.hydroponics_state_luminance
+          - switch.hydroponics_control_switch_2
+          - sensor.hydroponics_state_ultraviolet
+          - sensor.hydroponics_state_temperature
+          - switch.hydroponics_control_switch
+          - sensor.hydroponics_state_relative_humidity
+          - switch.hydroponics_control_switch_3
+  - title: Rooms
+    cards:
+      - type: entities
+        title: Master Bedroom
+        show_header_toggle: true
+        entities:
+          - switch.master_bedroom_light_switch
+          - light.master_bedroom_reading
+      - type: entities
+        title: Exterior
+        show_header_toggle: true
+        entities:
+          - switch.outside_light_switch
+      - type: entities
+        title: Kitchen
+        show_header_toggle: true
+        entities:
+          - switch.kitchen_light_switch
+          - switch.coffee_switch
+          - light.kitchen_sink
+      - type: media-control
+        entity: media_player.kitchen
+      - type: entities
+        title: Garage
+        show_header_toggle: true
+        entities:
+          - cover.garage_door
+      - type: entities
+        title: Living Room
+        show_header_toggle: true
+        entities:
+          - light.living_room_side_tables
+          - switch.living_room_light_switch
+      - type: entities
+        title: Basement
+        show_header_toggle: true
+        entities:
+          - light.basement_light_level
+      - type: media-control
+        entity: media_player.basement
+  - title: Automation
+    cards:
+      - type: entities
+        title: All Automations
+        show_header_toggle: true
+        entities:
+          - automation.arriving_home
+          - automation.sunset
+          - automation.hydroponic_light_on
+          - automation.arriving_home_after_sunset
+          - automation.notifiy__close_garage_door_if_open_at_night
+          - automation.trigger_2_hour_coffee_timer
+          - automation.hydroponic_light_off
+          - automation.hydroponic_fan_off
+          - automation.home_assistant_update
+          - automation.leaving_home
+          - automation.sunrise
+          - automation.startup_notification
+          - automation.hydroponic_fan_on
+      - type: entities
+        title: All Scripts
+        show_header_toggle: true
+        entities:
+          - script.thermostat
+
