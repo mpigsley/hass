@@ -12,9 +12,3 @@
   3. Edit Configuration -> Save Configuration
   4. `sudo cp zwscene.xml /home/homeassistant/.homeassistant/`
   5. `sudo cp zwcfg_0xd4b7980d.xml /home/homeassistant/.homeassistant/`
-
-# TODO
-
-* Add automation for Apple TV
-* Add/Remove Sensors from home mode based on occupation
-* Alexa, run/reset thermostat

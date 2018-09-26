@@ -70,7 +70,6 @@ master_bedroom:
   entities:
   - switch.master_bedroom_light_switch
   - light.master_bedroom_reading
-  - media_player.bedroom_apple_tv
 
 garage:
   name: Garage

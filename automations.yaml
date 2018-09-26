@@ -85,8 +85,6 @@
     entity_id: group.home
   - service: switch.turn_off
     entity_id: switch.coffee_switch
-  - service: homeassistant.turn_off
-    entity_id: script.coffee_timer_off
   - service: climate.set_away_mode
     data:
       entity_id: climate.home
@@ -150,6 +148,26 @@
     platform: state
     entity_id: switch.coffee_switch
     to: 'on'
+    for:
+      hours: 2
   action:
-    service: homeassistant.turn_on
-    entity_id: script.timed_coffee
+    service: switch.turn_off
+    entity_id: switch.coffee_switch
+
+- id: close_garage_at_night
+  alias: Notifiy & Close Garage Door if Open at Night
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  - platform: time
+    at: '22:00:00'
+  condition:
+  - condition: state
+    entity_id: cover.garage_door
+    state: 'open'
+  action:
+  - service: notify.notify_all
+    data_template:
+      title: "Garage door open... closing now"
+  - service: cover.close_cover
+    entity_id: cover.garage_door
