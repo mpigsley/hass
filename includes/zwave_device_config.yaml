@@ -1,0 +1,6 @@
+light.basement_light_level:
+  polling_intensity: 1
+  refresh_value: true
+
+switch.coffee_switch:
+  polling_intensity: 1

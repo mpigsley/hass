@@ -12,6 +12,9 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include includes/customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
 
 http:
   api_password: !secret http_password
@@ -76,13 +79,6 @@ cover:
   password: !secret myq_password
   type: chamberlain
 
-media_player:
-#  - platform: apple_tv
-#    name: bedroom_apple_tv
-#    host: !secret apple_tv_host
-#    login_id: !secret apple_tv_login_id
-  - platform: sonos
-
 sensor:
 - platform: yr
 - platform: darksky
@@ -119,6 +115,8 @@ light:
 
 zwave:
   usb_path: /dev/ttyACM0
+  polling_interval: 10000
+  device_config: !include includes/zwave_device_config.yaml
 
 ############################################################
 #

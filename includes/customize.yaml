@@ -46,15 +46,15 @@ script.timed_garage_door_after_sunrise:
 script.timed_garage_door_after_sunset:
   emulated_hue_hidden: true
 
-media_player.kitchen:
-  friendly_name: Kitchen Sonos
-  emulated_hue_name: Kitchen Sonos
-media_player.basement:
-  friendly_name: Basement Sonos
-  emulated_hue_name: Basement Sonos
-media_player.bedroom_apple_tv:
-  friendly_name: Master Bedroom Apple TV
-  emulated_hue_name: Master Bedroom Apple TV
+#media_player.kitchen:
+#  friendly_name: Kitchen Sonos
+#  emulated_hue_name: Kitchen Sonos
+#media_player.basement:
+#  friendly_name: Basement Sonos
+#  emulated_hue_name: Basement Sonos
+#media_player.bedroom_apple_tv:
+#  friendly_name: Master Bedroom Apple TV
+#  emulated_hue_name: Master Bedroom Apple TV
 
 light.kitchen_sink_1:
   emulated_hue_hidden: true
