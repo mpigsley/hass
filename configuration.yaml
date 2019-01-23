@@ -43,10 +43,10 @@ config:
 history:
   exclude:
     domains:
-      - automation
-      - sensor
-      - updater
-      - persistent_notification
+    - automation
+    - sensor
+    - updater
+    - persistent_notification
 
 recorder:
   db_url: !secret recorder_db_url
@@ -62,12 +62,12 @@ emulated_hue:
   listen_port: 8300
   off_maps_to_on_domains:
   exposed_domains:
-    - script
-    - switch
-    - light
-    - group
-    - input_boolean
-    - media_player
+  - script
+  - switch
+  - light
+  - group
+  - input_boolean
+  - media_player
 
 ios:
 
@@ -84,18 +84,15 @@ sensor:
 - platform: darksky
   api_key: !secret darksky_api
   units: us
+  forecast:
+  - 0
   monitored_conditions:
   - summary
-  - precip_type
-  - precip_intensity
-  - precip_probability
   - temperature
-  - wind_speed
   - humidity
-  - pressure
   - visibility
-  - temperature_max
-  - temperature_min
+  - temperature_high
+  - temperature_low
 
 light:
 - platform: hue

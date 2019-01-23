@@ -18,6 +18,7 @@ rooms:
   - group.living_room
   - group.kitchen
   - group.master_bedroom
+  - group.mitchels_office
   - group.exterior
   - group.basement
   - group.garage
@@ -71,6 +72,11 @@ master_bedroom:
   - switch.master_bedroom_light_switch
   - light.master_bedroom_reading
 
+mitchels_office:
+  name: Mitchel's Office
+  entities:
+  - light.mitchels_office_reading
+
 garage:
   name: Garage
   entities:
@@ -94,6 +100,7 @@ interior_lights:
   - group.living_room_lights
   - group.kitchen_lights
   - group.master_bedroom_lights
+  - group.mitchels_office_lights
 
 exterior_lights:
   name: Exterior Lights
@@ -123,6 +130,11 @@ living_room_lights:
   entities:
   - light.living_room_side_tables
   - switch.living_room_light_switch
+
+mitchels_office_lights:
+  name: Mitchel's Office Lights
+  entities:
+  - light.mitchels_office_reading
 
 # Other
 family:
@@ -155,6 +167,5 @@ forecast:
   - sun.sun
   - sensor.dark_sky_summary
   - sensor.dark_sky_temperature
-  - sensor.dark_sky_daily_high_temperature
-  - sensor.dark_sky_daily_low_temperature
   - sensor.dark_sky_humidity
+  - sensor.dark_sky_visibility

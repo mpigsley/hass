@@ -5,30 +5,28 @@ views:
     cards:
       - type: entities
         title: Family
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - device_tracker.mitchs_iphone
           - device_tracker.renees_iphone
       - type: entities
         title: Climate
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - sensor.master_bedroom_temperature
           - climate.home
           - sensor.home_temperature
       - type: entities
         title: Forecast
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
-          - sensor.dark_sky_humidity
-          - sensor.dark_sky_daily_high_temperature
-          - sensor.dark_sky_daily_low_temperature
-          - sensor.dark_sky_temperature
           - sun.sun
           - sensor.dark_sky_summary
+          - sensor.dark_sky_temperature
+          - sensor.dark_sky_humidity
+          - sensor.dark_sky_visibility
       - type: entities
         title: Hydroponics
-        show_header_toggle: true
         entities:
           - sensor.hydroponics_state_luminance
           - switch.hydroponics_control_switch_2
@@ -41,18 +39,15 @@ views:
     cards:
       - type: entities
         title: Master Bedroom
-        show_header_toggle: true
         entities:
           - switch.master_bedroom_light_switch
           - light.master_bedroom_reading
       - type: entities
         title: Exterior
-        show_header_toggle: true
         entities:
           - switch.outside_light_switch
       - type: entities
         title: Kitchen
-        show_header_toggle: true
         entities:
           - switch.kitchen_light_switch
           - switch.coffee_switch
@@ -61,18 +56,15 @@ views:
         entity: media_player.kitchen
       - type: entities
         title: Garage
-        show_header_toggle: true
         entities:
           - cover.garage_door
       - type: entities
         title: Living Room
-        show_header_toggle: true
         entities:
           - light.living_room_side_tables
           - switch.living_room_light_switch
       - type: entities
         title: Basement
-        show_header_toggle: true
         entities:
           - light.basement_light_level
       - type: media-control
@@ -81,7 +73,6 @@ views:
     cards:
       - type: entities
         title: All Automations
-        show_header_toggle: true
         entities:
           - automation.arriving_home
           - automation.sunset
@@ -98,7 +89,6 @@ views:
           - automation.hydroponic_fan_on
       - type: entities
         title: All Scripts
-        show_header_toggle: true
         entities:
           - script.thermostat
 
