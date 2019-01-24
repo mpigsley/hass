@@ -3,54 +3,52 @@
   trigger:
   - platform: state
     entity_id: device_tracker.mitchs_iphone
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   - platform: state
     entity_id: device_tracker.renees_iphone
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   condition:
     condition: sun
     after: sunset
   action:
   - service: switch.turn_on
     entity_id: switch.living_room_light_switch
-
 - id: arrive_home
   alias: Arriving Home
   trigger:
   - platform: state
     entity_id: device_tracker.mitchs_iphone
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   - platform: state
     entity_id: device_tracker.renees_iphone
-    from: 'not_home'
-    to: 'home'
+    from: not_home
+    to: home
   action:
   - service: climate.ecobee_resume_program
     data:
       entity_id: climate.home
       resume_all: true
-
 - id: hydroponic_fan_on
   alias: Hydroponic Fan On
   trigger:
   - platform: template
-    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int > 84 }}"
+    value_template: '{{ states.sensor.hydroponics_state_temperature.state | int >
+      84 }}'
   action:
   - service: switch.turn_on
     entity_id: switch.hydroponics_control_switch_3
-
 - id: hydroponic_fan_off
   alias: Hydroponic Fan Off
   trigger:
   - platform: template
-    value_template: "{{ states.sensor.hydroponics_state_temperature.state | int < 78 }}"
+    value_template: '{{ states.sensor.hydroponics_state_temperature.state | int <
+      78 }}'
   action:
   - service: switch.turn_off
     entity_id: switch.hydroponics_control_switch_3
-
 - id: hydroponic_light_on
   alias: Hydroponic Light On
   trigger:
@@ -61,7 +59,6 @@
   action:
   - service: switch.turn_on
     entity_id: switch.hydroponics_control_switch_2
-
 - id: hydroponic_light_off
   alias: Hydroponic Light Off
   trigger:
@@ -72,14 +69,13 @@
   action:
   - service: switch.turn_off
     entity_id: switch.hydroponics_control_switch_2
-
 - id: leave_home
   alias: Leaving Home
   trigger:
   - platform: state
     entity_id: group.family
-    from: 'home'
-    to: 'not_home'
+    from: home
+    to: not_home
   action:
   - service: homeassistant.turn_off
     entity_id: group.home
@@ -89,7 +85,6 @@
     data:
       entity_id: climate.home
       away_mode: true
-
 - id: ha_update
   alias: Home Assistant Update
   trigger:
@@ -97,13 +92,12 @@
     entity_id: updater.updater
   condition:
   - condition: template
-    value_template: "{{ states('updater.updater') != 'unknown' }}"
+    value_template: '{{ states(''updater.updater'') != ''unknown'' }}'
   action:
   - service: notify.ios_mitchs_iphone
     data:
-      title: 'New Version of Home-Assistant Available.'
-      message: "Version: {{ states('updater.updater') }}"
-
+      title: New Version of Home-Assistant Available.
+      message: 'Version: {{ states(''updater.updater'') }}'
 - id: startup
   alias: Startup Notification
   trigger:
@@ -112,36 +106,33 @@
   action:
   - service: notify.html5
     data:
-      title: 'Home Assistant'
-      message: 'Up and Running!'
+      title: Home Assistant
+      message: Up and Running!
   - delay: 00:01:00
   - service: notify.ios_mitchs_iphone
     data:
-      message: 'request_location_update'
+      message: request_location_update
   - service: notify.ios_renees_iphone
     data:
-      message: 'request_location_update'
-
+      message: request_location_update
 - id: sunrise
   alias: Sunrise
   trigger:
     platform: sun
     event: sunrise
-    offset: "+00:20:00"
+    offset: +00:20:00
   action:
   - service: switch.turn_off
     entity_id: switch.outside_light_switch
-
 - id: sunset
   alias: Sunset
   trigger:
     platform: sun
     event: sunset
-    offset: "-00:00:00"
+    offset: -00:00:00
   action:
     service: switch.turn_on
     entity_id: switch.outside_light_switch
-
 - id: turn_off_coffee
   alias: Trigger 2 hour coffee timer
   trigger:
@@ -153,7 +144,6 @@
   action:
     service: switch.turn_off
     entity_id: switch.coffee_switch
-
 - id: close_garage_at_night
   alias: Notifiy & Close Garage Door if Open at Night
   trigger:
@@ -164,10 +154,23 @@
   condition:
   - condition: state
     entity_id: cover.garage_door
-    state: 'open'
+    state: open
   action:
   - service: notify.notify_all
     data_template:
-      message: "Garage door open... closing now"
+      message: Garage door open... closing now
   - service: cover.close_cover
     entity_id: cover.garage_door
+- id: mitchels_morning_reading
+  alias: Mitchel's Morning Reading
+  trigger:
+  - at: '7:00:00'
+    platform: time
+  action:
+  - data:
+      entity_id: light.mitchels_office_reading
+    service: light.turn_on
+  - delay: '02:00:00'
+  - data:
+      entity_id: light.mitchels_office_reading
+    service: light.turn_off
