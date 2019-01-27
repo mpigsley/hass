@@ -48,7 +48,6 @@ main_room:
 basement:
   name: Basement
   entities:
-  - binary_sensor.downstairs_occupancy
   - media_player.basement
   - light.basement_light_level
 
@@ -135,37 +134,3 @@ mitchels_office_lights:
   name: Mitchel's Office Lights
   entities:
   - light.mitchels_office_reading
-
-# Other
-family:
-  name: Family
-  entities:
-  - device_tracker.mitchs_iphone
-  - device_tracker.renees_iphone
-
-climate:
-  name: Climate
-  entities:
-  - climate.home
-  - sensor.master_bedroom_temperature
-  - sensor.home_temperature
-
-hydroponics:
-  name: Hydroponics
-  entities:
-  - sensor.hydroponics_state_luminance
-  - sensor.hydroponics_state_relative_humidity
-  - sensor.hydroponics_state_temperature
-  - sensor.hydroponics_state_ultraviolet
-  - switch.hydroponics_control_switch
-  - switch.hydroponics_control_switch_2
-  - switch.hydroponics_control_switch_3
-
-forecast:
-  name: Forecast
-  entities:
-  - sun.sun
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_temperature
-  - sensor.dark_sky_humidity
-  - sensor.dark_sky_visibility

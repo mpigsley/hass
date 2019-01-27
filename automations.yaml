@@ -164,13 +164,15 @@
 - id: mitchels_morning_reading
   alias: Mitchel's Morning Reading
   trigger:
-  - at: '7:00:00'
-    platform: time
+    platform: state
+    entity_id: switch.coffee_switch
+    to: 'on'
   action:
+  - delay: '00:05:00'
   - data:
       entity_id: light.mitchels_office_reading
     service: light.turn_on
-  - delay: '02:00:00'
+  - delay: '00:45:00'
   - data:
       entity_id: light.mitchels_office_reading
     service: light.turn_off

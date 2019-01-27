@@ -3,19 +3,27 @@ title: Pigsley Home
 views:
   - title: Home
     cards:
-      - type: entities
-        title: Family
-        show_header_toggle: false
-        entities:
-          - device_tracker.mitchs_iphone
-          - device_tracker.renees_iphone
-      - type: entities
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Family
+            show_header_toggle: false
+            entities:
+              - device_tracker.mitchs_iphone
+              - device_tracker.renees_iphone
+          - type: map
+            entities:
+              - device_tracker.mitchs_iphone
+              - device_tracker.renees_iphone
+      - type: history-graph
         title: Climate
-        show_header_toggle: false
         entities:
           - sensor.master_bedroom_temperature
-          - climate.home
           - sensor.home_temperature
+          - sensor.dark_sky_temperature
+          - sensor.hydroponics_state_temperature
+      - type: thermostat
+        entity: climate.home
       - type: entities
         title: Forecast
         show_header_toggle: false
@@ -28,13 +36,13 @@ views:
       - type: entities
         title: Hydroponics
         entities:
-          - sensor.hydroponics_state_luminance
-          - switch.hydroponics_control_switch_2
-          - sensor.hydroponics_state_ultraviolet
-          - sensor.hydroponics_state_temperature
           - switch.hydroponics_control_switch
-          - sensor.hydroponics_state_relative_humidity
+          - switch.hydroponics_control_switch_2
           - switch.hydroponics_control_switch_3
+          - sensor.hydroponics_state_temperature
+          - sensor.hydroponics_state_relative_humidity
+          - sensor.hydroponics_state_luminance
+          - sensor.hydroponics_state_ultraviolet
   - title: Rooms
     cards:
       - type: entities
@@ -43,17 +51,33 @@ views:
           - switch.master_bedroom_light_switch
           - light.master_bedroom_reading
       - type: entities
+        title: Mitchel's Office
+        entities:
+          - light.mitchels_office_reading
+      - type: entities
         title: Exterior
         entities:
           - switch.outside_light_switch
-      - type: entities
-        title: Kitchen
-        entities:
-          - switch.kitchen_light_switch
-          - switch.coffee_switch
-          - light.kitchen_sink
-      - type: media-control
-        entity: media_player.kitchen
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Kitchen
+            entities:
+              - switch.kitchen_light_switch
+              - switch.coffee_switch
+              - light.kitchen_sink
+          - type: media-control
+            entity: media_player.kitchen
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Basement
+            entities:
+              - light.basement_light_level
+          - type: media-control
+            entity: media_player.basement
+          - type: media-control
+            entity: media_player.basement_display
       - type: entities
         title: Garage
         entities:
@@ -63,12 +87,6 @@ views:
         entities:
           - light.living_room_side_tables
           - switch.living_room_light_switch
-      - type: entities
-        title: Basement
-        entities:
-          - light.basement_light_level
-      - type: media-control
-        entity: media_player.basement
   - title: Automation
     cards:
       - type: entities
@@ -78,7 +96,7 @@ views:
           - automation.sunset
           - automation.hydroponic_light_on
           - automation.arriving_home_after_sunset
-          - automation.notifiy__close_garage_door_if_open_at_night
+          - automation.notifiy_close_garage_door_if_open_at_night
           - automation.trigger_2_hour_coffee_timer
           - automation.hydroponic_light_off
           - automation.hydroponic_fan_off
@@ -87,6 +105,7 @@ views:
           - automation.sunrise
           - automation.startup_notification
           - automation.hydroponic_fan_on
+          - automation.mitchel_s_morning_reading
       - type: entities
         title: All Scripts
         entities:

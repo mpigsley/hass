@@ -1,9 +1,3 @@
-group.forecast:
-  emulated_hue_hidden: true
-group.climate:
-  emulated_hue_hidden: true
-group.family:
-  emulated_hue_hidden: true
 group.all_automations:
   friendly_name: All Automations
   hidden: false
@@ -79,10 +73,6 @@ sensor.dark_sky_wind_speed:
 
 sensor.home_temperature:
   friendly_name: Upstairs Temperature
-sensor.dark_sky_daily_high_temperature:
-  friendly_name: Max Temperature
-sensor.dark_sky_daily_low_temperature:
-  friendly_name: Min Temperature
 sensor.dark_sky_humidity:
   friendly_name: Humidity
 sensor.dark_sky_summary:
@@ -92,14 +82,14 @@ sensor.dark_sky_summary:
 sensor.dark_sky_temperature:
   friendly_name: Temperature
 sensor.hydroponics_state_luminance:
-  friendly_name: Luminance
+  friendly_name: Tent Luminance
 sensor.hydroponics_state_relative_humidity:
-  friendly_name: Relative Humidity
+  friendly_name: Tent Humidity
   icon: mdi:water-percent
 sensor.hydroponics_state_temperature:
-  friendly_name: Temperature
+  friendly_name: Tent Temperature
 sensor.hydroponics_state_ultraviolet:
-  friendly_name: Ultraviolet
+  friendly_name: Tent Ultraviolet
 
 switch.master_bedroom_light_switch:
   friendly_name: Master Bedroom Light Switch

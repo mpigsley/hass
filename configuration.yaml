@@ -25,11 +25,12 @@ http:
 sun:
   elevation: 362
 
+lovelace:
+  mode: yaml
+
 frontend:
   javascript_version: latest
-  themes:
-    dark:
-      primary-color: "#233142"
+  themes: !include includes/themes.yaml
 
 updater:
   include_used_components: true
