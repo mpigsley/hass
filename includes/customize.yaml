@@ -71,6 +71,8 @@ sensor.dark_sky_visibility:
 sensor.dark_sky_wind_speed:
   hidden: true
 
+sensor.downstairs_temperature:
+  friendly_name: Downstairs Temperature
 sensor.home_temperature:
   friendly_name: Upstairs Temperature
 sensor.dark_sky_humidity:

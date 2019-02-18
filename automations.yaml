@@ -172,7 +172,7 @@
   - data:
       entity_id: light.mitchels_office_reading
     service: light.turn_on
-  - delay: '00:45:00'
+  - delay: '01:00:00'
   - data:
       entity_id: light.mitchels_office_reading
     service: light.turn_off
