@@ -104,10 +104,6 @@
     platform: homeassistant
     event: start
   action:
-  - service: notify.html5
-    data:
-      title: Home Assistant
-      message: Up and Running!
   - delay: 00:01:00
   - service: notify.ios_mitchs_iphone
     data:
@@ -144,23 +140,6 @@
   action:
     service: switch.turn_off
     entity_id: switch.coffee_switch
-- id: close_garage_at_night
-  alias: Notifiy & Close Garage Door if Open at Night
-  trigger:
-  - platform: time
-    at: '21:00:00'
-  - platform: time
-    at: '22:00:00'
-  condition:
-  - condition: state
-    entity_id: cover.garage_door
-    state: open
-  action:
-  - service: notify.notify_all
-    data_template:
-      message: Garage door open... closing now
-  - service: cover.close_cover
-    entity_id: cover.garage_door
 - id: mitchels_morning_reading
   alias: Mitchel's Morning Reading
   trigger:

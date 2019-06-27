@@ -3,7 +3,6 @@ deps
 home-assistant.log
 home-assistant_v2.db
 known_devices.yaml
-html5_push_registrations.conf
 phue*.conf
 .HA_VERSION
 home-assistant_v2.db-journal
@@ -19,3 +18,5 @@ options.xml
 .config_entries.json
 entity_registry.yaml
 .storage
+.homekit.state
+.pip_progress

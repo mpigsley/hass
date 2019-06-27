@@ -15,12 +15,16 @@ homeassistant:
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
+      api_password: !secret http_password
+
+duckdns:
+  domain: !secret duckdns_domain
+  access_token: !secret duckdns_token
 
 http:
-  api_password: !secret http_password
   base_url: !secret base_url
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
+#  ssl_certificate: !secret ssl_certificate
+#  ssl_key: !secret ssl_key
 
 sun:
   elevation: 362
@@ -36,8 +40,6 @@ updater:
   include_used_components: true
 
 system_health:
-
-discovery:
 
 logbook:
 
@@ -72,6 +74,8 @@ emulated_hue:
   - input_boolean
   - media_player
 
+homekit:
+
 ios:
 
 ecobee:
@@ -86,16 +90,8 @@ sensor:
 - platform: yr
 - platform: darksky
   api_key: !secret darksky_api
-  units: us
-  forecast:
-  - 0
   monitored_conditions:
-  - summary
   - temperature
-  - humidity
-  - visibility
-  - temperature_high
-  - temperature_low
 
 light:
 - platform: hue
@@ -112,6 +108,10 @@ light:
   entities:
   - light.living_room_side_table_left
   - light.living_room_side_table_right
+
+weather:
+- platform: darksky
+  api_key: !secret darksky_api
 
 zwave:
   usb_path: /dev/ttyACM0
